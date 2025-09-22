@@ -11,8 +11,8 @@ warnings.filterwarnings('ignore')
 
 # Page configuration
 st.set_page_config(
-    page_title="DAR Global - CEO Dashboard",
-    page_icon="🏗️",
+    page_title="DAR Global -Dashboard",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -134,10 +134,10 @@ def main():
     # Header
     st.markdown("""
     <div class="main-header">
-        <h1>🏗️ DAR Global</h1>
+        <h1>DAR Global</h1>
         <h2>Executive CRM Dashboard</h2>
         <p style="color: #1E90FF; font-size: 1.2rem; margin-top: 15px;">
-            Luxury Real Estate AI-Powered Analytics • Q3 2025
+             AI-Powered Analytics • Q3 2025
         </p>
         <p style="color: #32CD32; font-size: 1rem; margin-top: 10px;">
             Last Updated: {0}
@@ -146,7 +146,7 @@ def main():
     """.format(datetime.now().strftime("%Y-%m-%d %H:%M UTC")), unsafe_allow_html=True)
 
     # Sidebar Navigation
-    st.sidebar.markdown("## 📊 Dashboard Navigation")
+    st.sidebar.markdown("## Dashboard Navigation")
     st.sidebar.markdown("### Select Dashboard Sheet:")
 
     dashboard_options = [
@@ -163,7 +163,7 @@ def main():
 
     st.sidebar.markdown("---")
     st.sidebar.markdown("""
-    ### 🏗️ DAR Global
+    ### DAR Global
     **Luxury Real Estate CRM**
 
     📊 **Live Metrics:**
@@ -180,23 +180,23 @@ def main():
     """)
 
     # Route to appropriate dashboard
-    if selected_sheet == "🎯 Executive Summary":
+    if selected_sheet == "Executive Summary":
         show_executive_summary(data)
-    elif selected_sheet == "📈 Lead Status Dashboard":
+    elif selected_sheet == "Lead Status Dashboard":
         show_lead_status_dashboard(data)
-    elif selected_sheet == "📞 AI Call Activity Dashboard":
+    elif selected_sheet == "AI Call Activity Dashboard":
         show_call_activity_dashboard(data)
-    elif selected_sheet == "✅ Follow-up & Task Dashboard":
+    elif selected_sheet == "Follow-up & Task Dashboard":
         show_followup_task_dashboard(data)
-    elif selected_sheet == "👥 Agent Performance Dashboard":
+    elif selected_sheet == "Agent Performance Dashboard":
         show_agent_performance_dashboard(data)
-    elif selected_sheet == "💰 Conversion Dashboard":
+    elif selected_sheet == "Conversion Dashboard":
         show_conversion_dashboard(data)
-    elif selected_sheet == "🌍 Geographic Dashboard":
+    elif selected_sheet == "Geographic Dashboard":
         show_geographic_dashboard(data)
 
 def show_executive_summary(data):
-    st.header("🎯 Executive Summary")
+    st.header(" Executive Summary")
 
     leads_df = data['leads']
     calls_df = data['calls']
@@ -268,7 +268,7 @@ def show_executive_summary(data):
         """, unsafe_allow_html=True)
 
 def show_lead_status_dashboard(data):
-    st.header("📈 Lead Status Dashboard")
+    st.header("Lead Status Dashboard")
 
     leads_df = data['leads']
     stage_counts = leads_df['LeadStageId'].value_counts().sort_index()
@@ -356,7 +356,7 @@ def show_lead_status_dashboard(data):
         """, unsafe_allow_html=True)
 
 def show_call_activity_dashboard(data):
-    st.header("📞 AI Call Activity Dashboard")
+    st.header("AI Call Activity Dashboard")
 
     calls_df = data['calls']
     calls_df['CallDateTime'] = pd.to_datetime(calls_df['CallDateTime'])
@@ -444,7 +444,7 @@ def show_call_activity_dashboard(data):
     with col1:
         st.markdown("""
         <div class="insight-box">
-        <h4>⏰ Optimal Call Timing</h4>
+        <h4> Optimal Call Timing</h4>
         <ul>
         <li><strong>Best Times:</strong> 10:00-12:00, 14:00-16:00 local time</li>
         <li><strong>Best Days:</strong> Tuesday-Thursday (23% higher success)</li>
@@ -457,7 +457,7 @@ def show_call_activity_dashboard(data):
     with col2:
         st.markdown("""
         <div class="insight-box">
-        <h4>🎯 Performance Optimization</h4>
+        <h4> Performance Optimization</h4>
         <ul>
         <li>Predicted improvement: 12-15% with AI optimization</li>
         <li>AI sentiment analysis increases conversion by 3.2x</li>
@@ -468,7 +468,7 @@ def show_call_activity_dashboard(data):
         """, unsafe_allow_html=True)
 
 def show_followup_task_dashboard(data):
-    st.header("✅ Follow-up & Task Dashboard")
+    st.header("Follow-up & Task Dashboard")
 
     schedules_df = data['schedules']
     schedules_df['ScheduledDate'] = pd.to_datetime(schedules_df['ScheduledDate'])
@@ -497,7 +497,7 @@ def show_followup_task_dashboard(data):
         st.metric("Completion Rate", f"{completion_rate:.1f}%", delta="2.3% vs last week")
 
     st.markdown("---")
-    st.subheader("🤖 AI Task Optimization Insights")
+    st.subheader(" AI Task Optimization Insights")
 
     col1, col2 = st.columns(2)
 
@@ -528,7 +528,7 @@ def show_followup_task_dashboard(data):
         """, unsafe_allow_html=True)
 
 def show_agent_performance_dashboard(data):
-    st.header("👥 Agent Performance Dashboard")
+    st.header("Agent Performance Dashboard")
 
     leads_df = data['leads']
     agents_df = data['agents']
@@ -545,12 +545,12 @@ def show_agent_performance_dashboard(data):
     agent_metrics['ConversionRate'] = (agent_metrics['DealsWon'] / agent_metrics['LeadsAssigned'] * 100).round(1)
     agent_metrics = agent_metrics.fillna(0)
 
-    st.subheader("🏆 Top Performing Agents")
+    st.subheader("Top Performing Agents")
     top_agents = agent_metrics.nlargest(10, 'PipelineValue')[['AgentName', 'Role', 'LeadsAssigned', 'PipelineValue', 'DealsWon', 'ConversionRate']]
     top_agents['PipelineValue'] = top_agents['PipelineValue'].apply(format_currency)
     st.dataframe(top_agents, use_container_width=True)
 
-    st.subheader("🗓️ Agent Utilization Heatmap")
+    st.subheader("Agent Utilization Heatmap")
     st.info("This shows a simulated agent availability heatmap for the top 20 agents across business hours.")
 
     agents_sample = agent_metrics.head(20)['AgentName'].tolist()
@@ -599,14 +599,14 @@ def show_agent_performance_dashboard(data):
         st.metric("Top Performers", f"{top_performers} ({top_performers/len(agent_metrics)*100:.0f}%)")
 
     st.markdown("---")
-    st.subheader("🤖 AI Performance Insights")
+    st.subheader("AI Performance Insights")
 
     col1, col2 = st.columns(2)
 
     with col1:
         st.markdown("""
         <div class="insight-box">
-        <h4>📊 Capacity Planning</h4>
+        <h4>Capacity Planning</h4>
         <ul>
         <li><strong>Current Utilization:</strong> 78.5% (Target: 85-90%)</li>
         <li><strong>Peak Hours:</strong> 10:00-12:00, 14:00-16:00</li>
@@ -619,7 +619,7 @@ def show_agent_performance_dashboard(data):
     with col2:
         st.markdown("""
         <div class="insight-box">
-        <h4>🎯 ML Insights</h4>
+        <h4> ML Insights</h4>
         <ul>
         <li>Top 20% agents generate 67% of revenue</li>
         <li>Workload balancing can improve performance by 18%</li>
@@ -630,7 +630,7 @@ def show_agent_performance_dashboard(data):
         """, unsafe_allow_html=True)
 
 def show_conversion_dashboard(data):
-    st.header("💰 Conversion Dashboard")
+    st.header("Conversion Dashboard")
 
     leads_df = data['leads']
     won_leads = len(leads_df[leads_df['LeadStageId'] == 6])
@@ -683,7 +683,7 @@ def show_conversion_dashboard(data):
     with col1:
         st.markdown("""
         <div class="insight-box">
-        <h4>🔮 Revenue Prediction</h4>
+        <h4> Revenue Prediction</h4>
         <ul>
         <li><strong>Churn Probability:</strong> 12,500 high-risk leads ($12.5B)</li>
         <li><strong>Model Accuracy:</strong> 89% in conversion prediction</li>
@@ -696,7 +696,7 @@ def show_conversion_dashboard(data):
     with col2:
         st.markdown("""
         <div class="insight-box">
-        <h4>📈 Strategic Insights</h4>
+        <h4> Strategic Insights</h4>
         <ul>
         <li>Geographic expansion to Egypt/Morocco: $2.8B potential</li>
         <li>Premium service tier for >$10M USD leads recommended</li>
@@ -707,7 +707,7 @@ def show_conversion_dashboard(data):
         """, unsafe_allow_html=True)
 
 def show_geographic_dashboard(data):
-    st.header("🌍 Geographic Dashboard")
+    st.header(" Geographic Dashboard")
 
     leads_df = data['leads']
     countries_df = data['countries']
@@ -723,7 +723,7 @@ def show_geographic_dashboard(data):
     geo_performance['ConversionRate'] = (geo_performance['WonDeals'] / geo_performance['LeadCount'] * 100).round(1)
     geo_performance = geo_performance.sort_values('PipelineValue', ascending=False)
 
-    st.subheader("🏆 Top Markets Performance")
+    st.subheader(" Top Markets Performance")
 
     top_markets = geo_performance.head(8)
 
@@ -755,7 +755,7 @@ def show_geographic_dashboard(data):
 
     st.plotly_chart(fig1, use_container_width=True)
 
-    st.subheader("📊 Market Performance Table")
+    st.subheader("Market Performance Table")
     display_df = top_markets[['CountryName_E', 'LeadCount', 'PipelineValue', 'WonDeals', 'ConversionRate']].copy()
     display_df['PipelineValue'] = display_df['PipelineValue'].apply(format_currency)
     display_df.columns = ['Country', 'Leads', 'Pipeline Value', 'Won Deals', 'Conversion Rate (%)']
@@ -776,14 +776,14 @@ def show_geographic_dashboard(data):
         st.metric("Avg Conversion", f"{geo_performance['ConversionRate'].mean():.1f}%")
 
     st.markdown("---")
-    st.subheader("🤖 AI Geographic Intelligence")
+    st.subheader(" AI Geographic Intelligence")
 
     col1, col2 = st.columns(2)
 
     with col1:
         st.markdown("""
         <div class="insight-box">
-        <h4>🎯 Market Analysis</h4>
+        <h4> Market Analysis</h4>
         <ul>
         <li><strong>Expansion Opportunities:</strong> Egypt, Morocco, Turkey markets</li>
         <li><strong>Saturation Risk:</strong> UAE approaching market capacity</li>
@@ -796,7 +796,7 @@ def show_geographic_dashboard(data):
     with col2:
         st.markdown("""
         <div class="insight-box">
-        <h4>📊 Geo Predictions</h4>
+        <h4> Geo Predictions</h4>
         <ul>
         <li>Qatar market projected to grow 45% in 2026</li>
         <li>India shows highest lead volume potential (3x growth)</li>
