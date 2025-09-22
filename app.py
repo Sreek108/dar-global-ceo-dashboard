@@ -11,8 +11,7 @@ warnings.filterwarnings('ignore')
 
 # Page configuration
 st.set_page_config(
-    page_title="DAR Global - CEO Dashboard",
-    page_icon="🏗️",
+    page_title="DAR Global -Dashboard",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -134,7 +133,7 @@ def main():
     # Header
     st.markdown("""
     <div class="main-header">
-        <h1>🏗️ DAR Global</h1>
+        <h1>DAR Global</h1>
         <h2>Executive CRM Dashboard</h2>
         <p style="color: #1E90FF; font-size: 1.2rem; margin-top: 15px;">
             Luxury Real Estate AI-Powered Analytics • Q3 2025
