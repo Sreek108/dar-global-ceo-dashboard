@@ -861,4 +861,4 @@ def show_geographic_dashboard(data, grain):
         'LeadStageId': lambda x: (x == 6).sum()
     }).reset_index()
 
-    geo_performance.columns = ['CountryId',
+    geo_performance.columns = ['CountryId',]
