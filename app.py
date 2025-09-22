@@ -136,7 +136,7 @@ def main():
         <h1>DAR Global</h1>
         <h2>Executive CRM Dashboard</h2>
         <p style="color: #1E90FF; font-size: 1.2rem; margin-top: 15px;">
-            Luxury Real Estate AI-Powered Analytics • Q3 2025
+            AI-Powered Analytics • Q3 2025
         </p>
         <p style="color: #32CD32; font-size: 1rem; margin-top: 10px;">
             Last Updated: {0}
