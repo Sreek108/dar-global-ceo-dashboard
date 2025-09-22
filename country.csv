@@ -1,0 +1,11 @@
+CountryId,CountryCode,CountryName_E,CountryName_A,PhoneCode,IsActive,CreatedBy,CreatedOn
+1,SA,Saudi Arabia,المملكة العربية السعودية,+966,1,SYSTEM,2025-09-22 10:38:39.862910
+2,AE,United Arab Emirates,الإمارات العربية المتحدة,+971,1,SYSTEM,2025-09-22 10:38:39.862910
+3,QA,Qatar,قطر,+974,1,SYSTEM,2025-09-22 10:38:39.862910
+4,OM,Oman,عُمان,+968,1,SYSTEM,2025-09-22 10:38:39.862910
+5,BH,Bahrain,البحرين,+973,1,SYSTEM,2025-09-22 10:38:39.862910
+6,KW,Kuwait,الكويت,+965,1,SYSTEM,2025-09-22 10:38:39.862910
+7,IN,India,الهند,+91,1,SYSTEM,2025-09-22 10:38:39.862910
+8,GB,United Kingdom,المملكة المتحدة,+44,1,SYSTEM,2025-09-22 10:38:39.862910
+9,US,United States,الولايات المتحدة,+1,1,SYSTEM,2025-09-22 10:38:39.862910
+10,ES,Spain,إسبانيا,+34,1,SYSTEM,2025-09-22 10:38:39.862910

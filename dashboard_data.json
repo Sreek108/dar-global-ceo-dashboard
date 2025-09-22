@@ -1,0 +1,17 @@
+{
+  "executive_summary": {
+    "total_leads": 25000,
+    "pipeline_value_usd": 112406773745,
+    "revenue_generated_usd": 3161388599,
+    "conversion_rate_percent": 2.8,
+    "call_success_rate_percent": 30.9,
+    "active_agents": 471,
+    "roi_percent": 8205.2
+  },
+  "dashboard_config": {
+    "title": "DAR Global - Executive CRM Dashboard",
+    "company": "DAR Global",
+    "period": "Q3 2025",
+    "last_updated": "2025-09-22T10:38:52.850630"
+  }
+}

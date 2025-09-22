@@ -1,0 +1,6 @@
+TaskTypeId,TypeName_E,TypeName_A,IsActive
+1,Phone Call,مكالمة هاتفية,1
+2,Email,بريد إلكتروني,1
+3,Meeting,اجتماع,1
+4,Follow-up,متابعة,1
+5,Document,وثيقة,1

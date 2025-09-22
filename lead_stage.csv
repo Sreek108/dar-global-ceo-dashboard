@@ -1,0 +1,8 @@
+LeadStageId,StageName_E,StageName_A,SortOrder,IsActive,CreatedBy,CreatedOn
+1,New,جديد,1,1,SYSTEM,2025-09-22 10:38:39.889120
+2,Qualified,مؤهل,2,1,SYSTEM,2025-09-22 10:38:39.889120
+3,Presentation,عرض,3,1,SYSTEM,2025-09-22 10:38:39.889120
+4,Negotiation,تفاوض,4,1,SYSTEM,2025-09-22 10:38:39.889120
+5,Contract,عقد,5,1,SYSTEM,2025-09-22 10:38:39.889120
+6,Closed Won,مغلق مكسوب,6,1,SYSTEM,2025-09-22 10:38:39.889120
+7,Closed Lost,مغلق مفقود,7,1,SYSTEM,2025-09-22 10:38:39.889120

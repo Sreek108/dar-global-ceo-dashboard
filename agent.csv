@@ -1,0 +1,501 @@
+AgentId,AgentCode,FirstName,LastName,Email,Phone,Role,CountryId,IsActive,CreatedBy,CreatedOn
+1,AG0001,Agent1,Lastname,agent1@darglobal.com,+968556755036,AI Agent Supervisor,8,1,SYSTEM,2025-06-11 10:38:39.909225
+2,AG0002,Agent2,Lastname,agent2@darglobal.com,+971526735830,AI Agent Supervisor,8,1,SYSTEM,2024-09-27 10:38:39.909381
+3,AG0003,Agent3,Lastname,agent3@darglobal.com,+974588409749,Luxury Specialist,2,1,SYSTEM,2024-12-02 10:38:39.909458
+4,AG0004,Agent4,Lastname,agent4@darglobal.com,+971598750923,Lead Qualifier,6,0,SYSTEM,2024-10-12 10:38:39.909531
+5,AG0005,Agent5,Lastname,agent5@darglobal.com,+966577751354,Lead Qualifier,3,1,SYSTEM,2025-01-21 10:38:39.909601
+6,AG0006,Agent6,Lastname,agent6@darglobal.com,+966565285250,Luxury Specialist,3,1,SYSTEM,2024-10-28 10:38:39.909674
+7,AG0007,Agent7,Lastname,agent7@darglobal.com,+971548900483,Senior Closer,2,1,SYSTEM,2024-10-11 10:38:39.909742
+8,AG0008,Agent8,Lastname,agent8@darglobal.com,+91552157313,Follow-up Specialist,7,1,SYSTEM,2025-01-01 10:38:39.909849
+9,AG0009,Agent9,Lastname,agent9@darglobal.com,+974513187277,Senior Closer,4,1,SYSTEM,2025-09-20 10:38:39.910002
+10,AG0010,Agent10,Lastname,agent10@darglobal.com,+971522335235,Team Leader,2,1,SYSTEM,2025-04-13 10:38:39.910203
+11,AG0011,Agent11,Lastname,agent11@darglobal.com,+971585157821,Follow-up Specialist,8,1,SYSTEM,2025-01-13 10:38:39.910341
+12,AG0012,Agent12,Lastname,agent12@darglobal.com,+966555105831,Luxury Specialist,2,1,SYSTEM,2024-12-16 10:38:39.910455
+13,AG0013,Agent13,Lastname,agent13@darglobal.com,+971557055419,Follow-up Specialist,9,1,SYSTEM,2024-11-25 10:38:39.910561
+14,AG0014,Agent14,Lastname,agent14@darglobal.com,+966567157848,Senior Closer,8,1,SYSTEM,2025-05-09 10:38:39.910663
+15,AG0015,Agent15,Lastname,agent15@darglobal.com,+974548715250,Senior Closer,8,1,SYSTEM,2024-12-07 10:38:39.910773
+16,AG0016,Agent16,Lastname,agent16@darglobal.com,+974549583876,Lead Qualifier,7,1,SYSTEM,2025-08-25 10:38:39.910897
+17,AG0017,Agent17,Lastname,agent17@darglobal.com,+966551327755,Lead Qualifier,1,1,SYSTEM,2025-07-22 10:38:39.911013
+18,AG0018,Agent18,Lastname,agent18@darglobal.com,+91546626914,Follow-up Specialist,8,1,SYSTEM,2025-08-18 10:38:39.911610
+19,AG0019,Agent19,Lastname,agent19@darglobal.com,+966534045666,Luxury Specialist,3,1,SYSTEM,2025-02-16 10:38:39.911734
+20,AG0020,Agent20,Lastname,agent20@darglobal.com,+974597636744,Lead Qualifier,10,1,SYSTEM,2025-03-27 10:38:39.911857
+21,AG0021,Agent21,Lastname,agent21@darglobal.com,+966507971379,Luxury Specialist,4,1,SYSTEM,2025-02-03 10:38:39.912249
+22,AG0022,Agent22,Lastname,agent22@darglobal.com,+91536898446,AI Agent Supervisor,4,1,SYSTEM,2024-10-30 10:38:39.912552
+23,AG0023,Agent23,Lastname,agent23@darglobal.com,+974531288562,Team Leader,2,1,SYSTEM,2025-07-22 10:38:39.912691
+24,AG0024,Agent24,Lastname,agent24@darglobal.com,+966550441204,Team Leader,4,1,SYSTEM,2024-10-26 10:38:39.912959
+25,AG0025,Agent25,Lastname,agent25@darglobal.com,+971590586459,Senior Closer,7,1,SYSTEM,2024-12-13 10:38:39.913149
+26,AG0026,Agent26,Lastname,agent26@darglobal.com,+966523685747,Luxury Specialist,9,1,SYSTEM,2025-03-08 10:38:39.913276
+27,AG0027,Agent27,Lastname,agent27@darglobal.com,+974547936136,Team Leader,5,1,SYSTEM,2025-01-31 10:38:39.913394
+28,AG0028,Agent28,Lastname,agent28@darglobal.com,+968523234510,AI Agent Supervisor,6,1,SYSTEM,2025-02-01 10:38:39.913518
+29,AG0029,Agent29,Lastname,agent29@darglobal.com,+968585382256,Team Leader,1,1,SYSTEM,2024-12-28 10:38:39.913635
+30,AG0030,Agent30,Lastname,agent30@darglobal.com,+971584302960,Luxury Specialist,1,1,SYSTEM,2025-03-19 10:38:39.913756
+31,AG0031,Agent31,Lastname,agent31@darglobal.com,+966533779713,Lead Qualifier,6,0,SYSTEM,2025-02-10 10:38:39.913886
+32,AG0032,Agent32,Lastname,agent32@darglobal.com,+966540163712,AI Agent Supervisor,2,1,SYSTEM,2025-02-16 10:38:39.914006
+33,AG0033,Agent33,Lastname,agent33@darglobal.com,+968578826934,AI Agent Supervisor,8,1,SYSTEM,2025-01-10 10:38:39.914187
+34,AG0034,Agent34,Lastname,agent34@darglobal.com,+91531378291,Lead Qualifier,6,1,SYSTEM,2025-01-25 10:38:39.914301
+35,AG0035,Agent35,Lastname,agent35@darglobal.com,+966535562619,AI Agent Supervisor,6,1,SYSTEM,2025-01-06 10:38:39.914424
+36,AG0036,Agent36,Lastname,agent36@darglobal.com,+968557805563,AI Agent Supervisor,4,0,SYSTEM,2025-04-28 10:38:39.914538
+37,AG0037,Agent37,Lastname,agent37@darglobal.com,+968586641503,Follow-up Specialist,9,1,SYSTEM,2025-05-17 10:38:39.914652
+38,AG0038,Agent38,Lastname,agent38@darglobal.com,+971553777024,AI Agent Supervisor,9,1,SYSTEM,2025-04-24 10:38:39.914767
+39,AG0039,Agent39,Lastname,agent39@darglobal.com,+971534109026,Follow-up Specialist,10,1,SYSTEM,2025-07-24 10:38:39.914902
+40,AG0040,Agent40,Lastname,agent40@darglobal.com,+966599223553,Senior Closer,5,1,SYSTEM,2025-09-13 10:38:39.915021
+41,AG0041,Agent41,Lastname,agent41@darglobal.com,+966523448674,AI Agent Supervisor,3,1,SYSTEM,2025-07-30 10:38:39.915290
+42,AG0042,Agent42,Lastname,agent42@darglobal.com,+966573150359,Follow-up Specialist,1,1,SYSTEM,2025-06-10 10:38:39.915428
+43,AG0043,Agent43,Lastname,agent43@darglobal.com,+968578110973,AI Agent Supervisor,9,1,SYSTEM,2024-10-08 10:38:39.915545
+44,AG0044,Agent44,Lastname,agent44@darglobal.com,+971519576703,Team Leader,2,1,SYSTEM,2025-04-12 10:38:39.915663
+45,AG0045,Agent45,Lastname,agent45@darglobal.com,+91523705256,Follow-up Specialist,1,0,SYSTEM,2024-12-19 10:38:39.915782
+46,AG0046,Agent46,Lastname,agent46@darglobal.com,+968597576439,AI Agent Supervisor,1,1,SYSTEM,2025-03-30 10:38:39.915913
+47,AG0047,Agent47,Lastname,agent47@darglobal.com,+968537856186,AI Agent Supervisor,6,1,SYSTEM,2025-01-27 10:38:39.916332
+48,AG0048,Agent48,Lastname,agent48@darglobal.com,+91577275698,Team Leader,8,1,SYSTEM,2025-02-08 10:38:39.916459
+49,AG0049,Agent49,Lastname,agent49@darglobal.com,+91511326237,Senior Closer,1,1,SYSTEM,2024-11-09 10:38:39.916577
+50,AG0050,Agent50,Lastname,agent50@darglobal.com,+974540820227,AI Agent Supervisor,1,0,SYSTEM,2025-04-03 10:38:39.916694
+51,AG0051,Agent51,Lastname,agent51@darglobal.com,+968505130397,Luxury Specialist,5,1,SYSTEM,2025-02-01 10:38:39.917004
+52,AG0052,Agent52,Lastname,agent52@darglobal.com,+91594783767,Luxury Specialist,1,1,SYSTEM,2025-06-19 10:38:39.917278
+53,AG0053,Agent53,Lastname,agent53@darglobal.com,+974549742523,Senior Closer,4,1,SYSTEM,2025-04-14 10:38:39.917407
+54,AG0054,Agent54,Lastname,agent54@darglobal.com,+974556877183,Lead Qualifier,9,1,SYSTEM,2025-07-30 10:38:39.917528
+55,AG0055,Agent55,Lastname,agent55@darglobal.com,+971532474983,Team Leader,8,1,SYSTEM,2024-10-15 10:38:39.917646
+56,AG0056,Agent56,Lastname,agent56@darglobal.com,+971517882750,AI Agent Supervisor,10,1,SYSTEM,2024-12-23 10:38:39.917773
+57,AG0057,Agent57,Lastname,agent57@darglobal.com,+966549913224,AI Agent Supervisor,6,1,SYSTEM,2025-04-05 10:38:39.917921
+58,AG0058,Agent58,Lastname,agent58@darglobal.com,+971526658609,Senior Closer,8,1,SYSTEM,2024-11-13 10:38:39.918127
+59,AG0059,Agent59,Lastname,agent59@darglobal.com,+968573208492,Follow-up Specialist,1,1,SYSTEM,2025-05-03 10:38:39.918276
+60,AG0060,Agent60,Lastname,agent60@darglobal.com,+968549895282,Follow-up Specialist,2,1,SYSTEM,2025-02-19 10:38:39.918406
+61,AG0061,Agent61,Lastname,agent61@darglobal.com,+974548939582,Team Leader,6,1,SYSTEM,2024-10-15 10:38:39.918539
+62,AG0062,Agent62,Lastname,agent62@darglobal.com,+966526191539,Lead Qualifier,6,1,SYSTEM,2025-06-13 10:38:39.918672
+63,AG0063,Agent63,Lastname,agent63@darglobal.com,+966566009351,Luxury Specialist,5,1,SYSTEM,2025-01-03 10:38:39.918809
+64,AG0064,Agent64,Lastname,agent64@darglobal.com,+91529549535,Follow-up Specialist,3,1,SYSTEM,2024-11-18 10:38:39.918939
+65,AG0065,Agent65,Lastname,agent65@darglobal.com,+91503379569,Follow-up Specialist,10,1,SYSTEM,2025-04-30 10:38:39.919183
+66,AG0066,Agent66,Lastname,agent66@darglobal.com,+974506319707,Lead Qualifier,7,1,SYSTEM,2025-05-28 10:38:39.919323
+67,AG0067,Agent67,Lastname,agent67@darglobal.com,+966504294539,Luxury Specialist,1,1,SYSTEM,2025-09-21 10:38:39.919453
+68,AG0068,Agent68,Lastname,agent68@darglobal.com,+971590354783,Team Leader,6,1,SYSTEM,2025-01-28 10:38:39.919572
+69,AG0069,Agent69,Lastname,agent69@darglobal.com,+91556996736,Luxury Specialist,7,1,SYSTEM,2025-07-15 10:38:39.919698
+70,AG0070,Agent70,Lastname,agent70@darglobal.com,+91557338102,AI Agent Supervisor,10,1,SYSTEM,2025-06-28 10:38:39.919814
+71,AG0071,Agent71,Lastname,agent71@darglobal.com,+966595875021,Follow-up Specialist,5,1,SYSTEM,2025-06-20 10:38:39.919943
+72,AG0072,Agent72,Lastname,agent72@darglobal.com,+968581949124,Follow-up Specialist,10,1,SYSTEM,2024-10-16 10:38:39.920121
+73,AG0073,Agent73,Lastname,agent73@darglobal.com,+968572807712,Team Leader,5,1,SYSTEM,2025-09-12 10:38:39.920271
+74,AG0074,Agent74,Lastname,agent74@darglobal.com,+91550166883,Lead Qualifier,4,1,SYSTEM,2025-01-15 10:38:39.920391
+75,AG0075,Agent75,Lastname,agent75@darglobal.com,+974513470137,Senior Closer,8,1,SYSTEM,2025-09-18 10:38:39.920527
+76,AG0076,Agent76,Lastname,agent76@darglobal.com,+971599967871,AI Agent Supervisor,4,1,SYSTEM,2025-03-28 10:38:39.920679
+77,AG0077,Agent77,Lastname,agent77@darglobal.com,+974578547323,Senior Closer,1,1,SYSTEM,2025-06-13 10:38:39.920800
+78,AG0078,Agent78,Lastname,agent78@darglobal.com,+968547685442,Senior Closer,1,1,SYSTEM,2025-08-10 10:38:39.920932
+79,AG0079,Agent79,Lastname,agent79@darglobal.com,+968529469068,Follow-up Specialist,2,0,SYSTEM,2025-01-23 10:38:39.921380
+80,AG0080,Agent80,Lastname,agent80@darglobal.com,+974537317456,Lead Qualifier,8,1,SYSTEM,2025-06-24 10:38:39.921505
+81,AG0081,Agent81,Lastname,agent81@darglobal.com,+971545932658,Senior Closer,7,1,SYSTEM,2025-05-31 10:38:39.921784
+82,AG0082,Agent82,Lastname,agent82@darglobal.com,+91510617244,Follow-up Specialist,9,1,SYSTEM,2025-01-16 10:38:39.921949
+83,AG0083,Agent83,Lastname,agent83@darglobal.com,+968591008393,Luxury Specialist,9,1,SYSTEM,2025-02-07 10:38:39.922159
+84,AG0084,Agent84,Lastname,agent84@darglobal.com,+966555395426,Follow-up Specialist,2,1,SYSTEM,2025-06-18 10:38:39.922283
+85,AG0085,Agent85,Lastname,agent85@darglobal.com,+91585241611,Senior Closer,7,1,SYSTEM,2025-02-17 10:38:39.922400
+86,AG0086,Agent86,Lastname,agent86@darglobal.com,+974540260456,Team Leader,1,1,SYSTEM,2025-06-30 10:38:39.922517
+87,AG0087,Agent87,Lastname,agent87@darglobal.com,+966532425301,Luxury Specialist,3,1,SYSTEM,2025-02-01 10:38:39.922634
+88,AG0088,Agent88,Lastname,agent88@darglobal.com,+974547911176,Follow-up Specialist,4,1,SYSTEM,2025-05-01 10:38:39.923420
+89,AG0089,Agent89,Lastname,agent89@darglobal.com,+91551371106,Follow-up Specialist,9,1,SYSTEM,2025-07-31 10:38:39.923553
+90,AG0090,Agent90,Lastname,agent90@darglobal.com,+966584673574,Luxury Specialist,5,1,SYSTEM,2025-02-11 10:38:39.923678
+91,AG0091,Agent91,Lastname,agent91@darglobal.com,+971517310852,AI Agent Supervisor,7,1,SYSTEM,2024-10-26 10:38:39.923796
+92,AG0092,Agent92,Lastname,agent92@darglobal.com,+971577273675,Senior Closer,10,1,SYSTEM,2025-01-12 10:38:39.923929
+93,AG0093,Agent93,Lastname,agent93@darglobal.com,+91516434343,Lead Qualifier,9,1,SYSTEM,2025-05-23 10:38:39.924120
+94,AG0094,Agent94,Lastname,agent94@darglobal.com,+971580954884,Luxury Specialist,5,1,SYSTEM,2025-05-09 10:38:39.924254
+95,AG0095,Agent95,Lastname,agent95@darglobal.com,+91523020885,Follow-up Specialist,1,1,SYSTEM,2025-02-17 10:38:39.924372
+96,AG0096,Agent96,Lastname,agent96@darglobal.com,+91514509187,Follow-up Specialist,6,1,SYSTEM,2024-12-21 10:38:39.924492
+97,AG0097,Agent97,Lastname,agent97@darglobal.com,+91512831595,Team Leader,7,1,SYSTEM,2024-10-11 10:38:39.924613
+98,AG0098,Agent98,Lastname,agent98@darglobal.com,+974574936358,Team Leader,3,1,SYSTEM,2025-01-23 10:38:39.924737
+99,AG0099,Agent99,Lastname,agent99@darglobal.com,+968538538877,Lead Qualifier,4,1,SYSTEM,2024-11-09 10:38:39.925240
+100,AG0100,Agent100,Lastname,agent100@darglobal.com,+966589630668,Follow-up Specialist,9,1,SYSTEM,2024-11-14 10:38:39.925363
+101,AG0101,Agent101,Lastname,agent101@darglobal.com,+966520812709,Luxury Specialist,6,1,SYSTEM,2025-04-02 10:38:39.925479
+102,AG0102,Agent102,Lastname,agent102@darglobal.com,+91551152700,Luxury Specialist,6,1,SYSTEM,2025-01-13 10:38:39.925596
+103,AG0103,Agent103,Lastname,agent103@darglobal.com,+91512842659,AI Agent Supervisor,3,1,SYSTEM,2025-08-06 10:38:39.925898
+104,AG0104,Agent104,Lastname,agent104@darglobal.com,+966535427853,Senior Closer,5,1,SYSTEM,2025-01-06 10:38:39.926086
+105,AG0105,Agent105,Lastname,agent105@darglobal.com,+966538673354,Follow-up Specialist,10,1,SYSTEM,2024-09-29 10:38:39.926237
+106,AG0106,Agent106,Lastname,agent106@darglobal.com,+968555860631,Follow-up Specialist,5,1,SYSTEM,2024-10-09 10:38:39.926373
+107,AG0107,Agent107,Lastname,agent107@darglobal.com,+968556987271,Lead Qualifier,2,1,SYSTEM,2024-09-30 10:38:39.926482
+108,AG0108,Agent108,Lastname,agent108@darglobal.com,+966542734307,AI Agent Supervisor,6,0,SYSTEM,2025-03-05 10:38:39.926560
+109,AG0109,Agent109,Lastname,agent109@darglobal.com,+966521288948,Follow-up Specialist,3,1,SYSTEM,2025-07-02 10:38:39.926628
+110,AG0110,Agent110,Lastname,agent110@darglobal.com,+974529933823,Luxury Specialist,9,1,SYSTEM,2024-11-14 10:38:39.926719
+111,AG0111,Agent111,Lastname,agent111@darglobal.com,+971587350522,Luxury Specialist,5,0,SYSTEM,2024-12-07 10:38:39.926788
+112,AG0112,Agent112,Lastname,agent112@darglobal.com,+966549907857,Senior Closer,5,1,SYSTEM,2025-02-17 10:38:39.926855
+113,AG0113,Agent113,Lastname,agent113@darglobal.com,+974528267184,Luxury Specialist,1,1,SYSTEM,2025-06-15 10:38:39.926943
+114,AG0114,Agent114,Lastname,agent114@darglobal.com,+966558720660,Team Leader,1,1,SYSTEM,2025-05-12 10:38:39.927009
+115,AG0115,Agent115,Lastname,agent115@darglobal.com,+974597278998,Luxury Specialist,5,1,SYSTEM,2025-07-01 10:38:39.927205
+116,AG0116,Agent116,Lastname,agent116@darglobal.com,+966595927380,Team Leader,9,1,SYSTEM,2025-08-02 10:38:39.927284
+117,AG0117,Agent117,Lastname,agent117@darglobal.com,+91553363404,Follow-up Specialist,1,1,SYSTEM,2024-12-08 10:38:39.927394
+118,AG0118,Agent118,Lastname,agent118@darglobal.com,+971561902171,Lead Qualifier,10,1,SYSTEM,2025-05-27 10:38:39.927512
+119,AG0119,Agent119,Lastname,agent119@darglobal.com,+974586601594,Lead Qualifier,1,1,SYSTEM,2025-02-12 10:38:39.927629
+120,AG0120,Agent120,Lastname,agent120@darglobal.com,+974538720111,Luxury Specialist,5,1,SYSTEM,2025-07-09 10:38:39.927752
+121,AG0121,Agent121,Lastname,agent121@darglobal.com,+974548840101,Follow-up Specialist,2,1,SYSTEM,2025-06-16 10:38:39.927893
+122,AG0122,Agent122,Lastname,agent122@darglobal.com,+971574062621,AI Agent Supervisor,3,1,SYSTEM,2024-11-18 10:38:39.928034
+123,AG0123,Agent123,Lastname,agent123@darglobal.com,+966560084389,Senior Closer,8,1,SYSTEM,2025-08-23 10:38:39.928255
+124,AG0124,Agent124,Lastname,agent124@darglobal.com,+971579945266,Senior Closer,5,1,SYSTEM,2025-05-07 10:38:39.928379
+125,AG0125,Agent125,Lastname,agent125@darglobal.com,+966581251088,Follow-up Specialist,4,1,SYSTEM,2025-08-19 10:38:39.928785
+126,AG0126,Agent126,Lastname,agent126@darglobal.com,+91515734209,Luxury Specialist,3,1,SYSTEM,2025-04-24 10:38:39.928928
+127,AG0127,Agent127,Lastname,agent127@darglobal.com,+974559387253,Follow-up Specialist,8,1,SYSTEM,2024-12-15 10:38:39.929094
+128,AG0128,Agent128,Lastname,agent128@darglobal.com,+974522383810,AI Agent Supervisor,2,1,SYSTEM,2025-08-02 10:38:39.929241
+129,AG0129,Agent129,Lastname,agent129@darglobal.com,+974539902996,Luxury Specialist,2,1,SYSTEM,2024-11-09 10:38:39.929362
+130,AG0130,Agent130,Lastname,agent130@darglobal.com,+91575012933,Senior Closer,5,1,SYSTEM,2024-10-11 10:38:39.929485
+131,AG0131,Agent131,Lastname,agent131@darglobal.com,+971516099248,Team Leader,10,1,SYSTEM,2025-07-11 10:38:39.929604
+132,AG0132,Agent132,Lastname,agent132@darglobal.com,+971577998328,Senior Closer,6,1,SYSTEM,2024-10-07 10:38:39.929713
+133,AG0133,Agent133,Lastname,agent133@darglobal.com,+974562802750,Luxury Specialist,1,1,SYSTEM,2025-01-08 10:38:39.929907
+134,AG0134,Agent134,Lastname,agent134@darglobal.com,+966515152994,Luxury Specialist,4,1,SYSTEM,2025-05-18 10:38:39.930022
+135,AG0135,Agent135,Lastname,agent135@darglobal.com,+971542758171,Team Leader,8,1,SYSTEM,2025-04-21 10:38:39.930221
+136,AG0136,Agent136,Lastname,agent136@darglobal.com,+974510466615,AI Agent Supervisor,7,1,SYSTEM,2025-01-27 10:38:39.930340
+137,AG0137,Agent137,Lastname,agent137@darglobal.com,+974503708654,Follow-up Specialist,2,1,SYSTEM,2025-02-07 10:38:39.930455
+138,AG0138,Agent138,Lastname,agent138@darglobal.com,+974547756479,Senior Closer,7,1,SYSTEM,2025-03-04 10:38:39.930578
+139,AG0139,Agent139,Lastname,agent139@darglobal.com,+966564413145,Team Leader,9,1,SYSTEM,2025-02-22 10:38:39.930713
+140,AG0140,Agent140,Lastname,agent140@darglobal.com,+966598149955,Lead Qualifier,3,1,SYSTEM,2025-04-29 10:38:39.930839
+141,AG0141,Agent141,Lastname,agent141@darglobal.com,+968525153646,Team Leader,2,1,SYSTEM,2025-01-29 10:38:39.930966
+142,AG0142,Agent142,Lastname,agent142@darglobal.com,+974516203305,Senior Closer,5,1,SYSTEM,2024-12-14 10:38:39.931198
+143,AG0143,Agent143,Lastname,agent143@darglobal.com,+971553028791,AI Agent Supervisor,6,1,SYSTEM,2024-12-07 10:38:39.931335
+144,AG0144,Agent144,Lastname,agent144@darglobal.com,+91534499221,Luxury Specialist,6,1,SYSTEM,2025-06-02 10:38:39.931452
+145,AG0145,Agent145,Lastname,agent145@darglobal.com,+968530354781,AI Agent Supervisor,8,1,SYSTEM,2025-01-18 10:38:39.931568
+146,AG0146,Agent146,Lastname,agent146@darglobal.com,+974578350878,Luxury Specialist,4,1,SYSTEM,2025-09-16 10:38:39.931690
+147,AG0147,Agent147,Lastname,agent147@darglobal.com,+971557975251,Follow-up Specialist,4,0,SYSTEM,2025-05-27 10:38:39.931810
+148,AG0148,Agent148,Lastname,agent148@darglobal.com,+966594484061,Team Leader,3,1,SYSTEM,2025-03-12 10:38:39.931938
+149,AG0149,Agent149,Lastname,agent149@darglobal.com,+974539138695,Lead Qualifier,3,1,SYSTEM,2025-05-12 10:38:39.932104
+150,AG0150,Agent150,Lastname,agent150@darglobal.com,+971548014453,Follow-up Specialist,3,1,SYSTEM,2025-09-02 10:38:39.932250
+151,AG0151,Agent151,Lastname,agent151@darglobal.com,+966590567214,Senior Closer,10,1,SYSTEM,2025-08-15 10:38:39.932369
+152,AG0152,Agent152,Lastname,agent152@darglobal.com,+91526216317,AI Agent Supervisor,4,1,SYSTEM,2025-01-06 10:38:39.932484
+153,AG0153,Agent153,Lastname,agent153@darglobal.com,+966572017911,Lead Qualifier,5,1,SYSTEM,2025-04-03 10:38:39.932614
+154,AG0154,Agent154,Lastname,agent154@darglobal.com,+971542321932,Lead Qualifier,4,1,SYSTEM,2025-06-13 10:38:39.932745
+155,AG0155,Agent155,Lastname,agent155@darglobal.com,+966543928336,Senior Closer,8,1,SYSTEM,2025-06-20 10:38:39.932867
+156,AG0156,Agent156,Lastname,agent156@darglobal.com,+966529967940,Team Leader,2,1,SYSTEM,2025-05-08 10:38:39.932995
+157,AG0157,Agent157,Lastname,agent157@darglobal.com,+971518161634,AI Agent Supervisor,1,1,SYSTEM,2025-07-24 10:38:39.933176
+158,AG0158,Agent158,Lastname,agent158@darglobal.com,+91563446855,AI Agent Supervisor,9,1,SYSTEM,2024-11-10 10:38:39.933309
+159,AG0159,Agent159,Lastname,agent159@darglobal.com,+974534427604,Luxury Specialist,5,1,SYSTEM,2025-07-06 10:38:39.933432
+160,AG0160,Agent160,Lastname,agent160@darglobal.com,+971506941245,Follow-up Specialist,9,1,SYSTEM,2025-06-25 10:38:39.933562
+161,AG0161,Agent161,Lastname,agent161@darglobal.com,+971517606951,Team Leader,3,1,SYSTEM,2024-10-04 10:38:39.933684
+162,AG0162,Agent162,Lastname,agent162@darglobal.com,+966557821848,Senior Closer,1,1,SYSTEM,2024-11-17 10:38:39.933797
+163,AG0163,Agent163,Lastname,agent163@darglobal.com,+974549818662,AI Agent Supervisor,6,1,SYSTEM,2025-03-27 10:38:39.933956
+164,AG0164,Agent164,Lastname,agent164@darglobal.com,+971561298111,Follow-up Specialist,1,1,SYSTEM,2025-02-03 10:38:39.934141
+165,AG0165,Agent165,Lastname,agent165@darglobal.com,+974531556003,Luxury Specialist,6,1,SYSTEM,2024-12-07 10:38:39.934274
+166,AG0166,Agent166,Lastname,agent166@darglobal.com,+968531738453,Lead Qualifier,10,1,SYSTEM,2024-10-27 10:38:39.934395
+167,AG0167,Agent167,Lastname,agent167@darglobal.com,+966539367797,Team Leader,4,1,SYSTEM,2025-03-22 10:38:39.934516
+168,AG0168,Agent168,Lastname,agent168@darglobal.com,+91536982407,Luxury Specialist,4,1,SYSTEM,2025-05-15 10:38:39.934635
+169,AG0169,Agent169,Lastname,agent169@darglobal.com,+974569353566,AI Agent Supervisor,3,1,SYSTEM,2024-12-14 10:38:39.934748
+170,AG0170,Agent170,Lastname,agent170@darglobal.com,+974522674714,Luxury Specialist,4,1,SYSTEM,2024-10-27 10:38:39.934876
+171,AG0171,Agent171,Lastname,agent171@darglobal.com,+971542019117,AI Agent Supervisor,10,1,SYSTEM,2025-02-24 10:38:39.935008
+172,AG0172,Agent172,Lastname,agent172@darglobal.com,+966525836512,Follow-up Specialist,4,1,SYSTEM,2025-05-12 10:38:39.935260
+173,AG0173,Agent173,Lastname,agent173@darglobal.com,+91584776775,Lead Qualifier,1,1,SYSTEM,2025-08-02 10:38:39.935470
+174,AG0174,Agent174,Lastname,agent174@darglobal.com,+91545084109,Senior Closer,6,1,SYSTEM,2025-01-08 10:38:39.935590
+175,AG0175,Agent175,Lastname,agent175@darglobal.com,+91569111188,Lead Qualifier,4,1,SYSTEM,2024-11-13 10:38:39.935707
+176,AG0176,Agent176,Lastname,agent176@darglobal.com,+966580908854,AI Agent Supervisor,8,1,SYSTEM,2024-11-17 10:38:39.935828
+177,AG0177,Agent177,Lastname,agent177@darglobal.com,+966577652169,Follow-up Specialist,9,0,SYSTEM,2024-12-05 10:38:39.935957
+178,AG0178,Agent178,Lastname,agent178@darglobal.com,+968526395160,Lead Qualifier,6,1,SYSTEM,2025-02-24 10:38:39.936143
+179,AG0179,Agent179,Lastname,agent179@darglobal.com,+974580535969,AI Agent Supervisor,1,1,SYSTEM,2024-09-23 10:38:39.936278
+180,AG0180,Agent180,Lastname,agent180@darglobal.com,+974568105394,Team Leader,8,1,SYSTEM,2025-03-26 10:38:39.936403
+181,AG0181,Agent181,Lastname,agent181@darglobal.com,+91536919127,Senior Closer,1,1,SYSTEM,2025-04-25 10:38:39.936528
+182,AG0182,Agent182,Lastname,agent182@darglobal.com,+971556240283,Lead Qualifier,5,1,SYSTEM,2024-10-20 10:38:39.936654
+183,AG0183,Agent183,Lastname,agent183@darglobal.com,+968592294504,Senior Closer,4,1,SYSTEM,2025-07-21 10:38:39.936799
+184,AG0184,Agent184,Lastname,agent184@darglobal.com,+91509427504,Senior Closer,7,1,SYSTEM,2025-02-23 10:38:39.936926
+185,AG0185,Agent185,Lastname,agent185@darglobal.com,+91522761900,Luxury Specialist,8,1,SYSTEM,2025-01-08 10:38:39.937041
+186,AG0186,Agent186,Lastname,agent186@darglobal.com,+974567812526,Lead Qualifier,2,1,SYSTEM,2025-06-01 10:38:39.937234
+187,AG0187,Agent187,Lastname,agent187@darglobal.com,+971565954738,Follow-up Specialist,1,1,SYSTEM,2025-07-29 10:38:39.937350
+188,AG0188,Agent188,Lastname,agent188@darglobal.com,+974595785737,Lead Qualifier,3,1,SYSTEM,2025-06-27 10:38:39.937463
+189,AG0189,Agent189,Lastname,agent189@darglobal.com,+968599831174,Luxury Specialist,8,0,SYSTEM,2025-01-18 10:38:39.937580
+190,AG0190,Agent190,Lastname,agent190@darglobal.com,+974552934615,AI Agent Supervisor,8,1,SYSTEM,2025-01-26 10:38:39.937695
+191,AG0191,Agent191,Lastname,agent191@darglobal.com,+91595754818,AI Agent Supervisor,1,1,SYSTEM,2025-01-01 10:38:39.937809
+192,AG0192,Agent192,Lastname,agent192@darglobal.com,+971585808215,Team Leader,8,1,SYSTEM,2025-04-10 10:38:39.937942
+193,AG0193,Agent193,Lastname,agent193@darglobal.com,+91500611213,Lead Qualifier,7,1,SYSTEM,2025-04-14 10:38:39.938129
+194,AG0194,Agent194,Lastname,agent194@darglobal.com,+91506202258,Follow-up Specialist,2,1,SYSTEM,2024-11-23 10:38:39.938269
+195,AG0195,Agent195,Lastname,agent195@darglobal.com,+91540473321,Lead Qualifier,3,1,SYSTEM,2025-09-02 10:38:39.938388
+196,AG0196,Agent196,Lastname,agent196@darglobal.com,+91506193956,Team Leader,9,1,SYSTEM,2024-10-02 10:38:39.938510
+197,AG0197,Agent197,Lastname,agent197@darglobal.com,+968524899065,Team Leader,8,1,SYSTEM,2025-04-17 10:38:39.938641
+198,AG0198,Agent198,Lastname,agent198@darglobal.com,+974583976173,Senior Closer,2,0,SYSTEM,2025-09-08 10:38:39.938761
+199,AG0199,Agent199,Lastname,agent199@darglobal.com,+966544599847,Lead Qualifier,9,1,SYSTEM,2025-01-19 10:38:39.938882
+200,AG0200,Agent200,Lastname,agent200@darglobal.com,+974566374125,Follow-up Specialist,10,1,SYSTEM,2025-06-05 10:38:39.939014
+201,AG0201,Agent201,Lastname,agent201@darglobal.com,+971595809238,Luxury Specialist,6,1,SYSTEM,2024-10-16 10:38:39.939271
+202,AG0202,Agent202,Lastname,agent202@darglobal.com,+971560200291,Senior Closer,6,1,SYSTEM,2025-04-10 10:38:39.939406
+203,AG0203,Agent203,Lastname,agent203@darglobal.com,+966574052985,Follow-up Specialist,7,1,SYSTEM,2024-10-15 10:38:39.939538
+204,AG0204,Agent204,Lastname,agent204@darglobal.com,+91558771482,Senior Closer,6,1,SYSTEM,2025-06-16 10:38:39.939656
+205,AG0205,Agent205,Lastname,agent205@darglobal.com,+968534780908,Senior Closer,5,1,SYSTEM,2025-04-02 10:38:39.939783
+206,AG0206,Agent206,Lastname,agent206@darglobal.com,+966553775257,Luxury Specialist,10,1,SYSTEM,2025-05-15 10:38:39.939923
+207,AG0207,Agent207,Lastname,agent207@darglobal.com,+968590740533,AI Agent Supervisor,1,1,SYSTEM,2024-12-04 10:38:39.940049
+208,AG0208,Agent208,Lastname,agent208@darglobal.com,+974524694812,Luxury Specialist,8,1,SYSTEM,2025-04-11 10:38:39.940252
+209,AG0209,Agent209,Lastname,agent209@darglobal.com,+966511952314,AI Agent Supervisor,6,1,SYSTEM,2025-06-03 10:38:39.940366
+210,AG0210,Agent210,Lastname,agent210@darglobal.com,+91564445751,Senior Closer,10,0,SYSTEM,2025-04-27 10:38:39.940482
+211,AG0211,Agent211,Lastname,agent211@darglobal.com,+974505703394,Follow-up Specialist,1,1,SYSTEM,2025-03-05 10:38:39.940631
+212,AG0212,Agent212,Lastname,agent212@darglobal.com,+971523567809,Luxury Specialist,9,1,SYSTEM,2025-09-05 10:38:39.940750
+213,AG0213,Agent213,Lastname,agent213@darglobal.com,+966574842172,AI Agent Supervisor,8,1,SYSTEM,2025-08-14 10:38:39.940884
+214,AG0214,Agent214,Lastname,agent214@darglobal.com,+974528356738,Lead Qualifier,5,0,SYSTEM,2025-06-12 10:38:39.941022
+215,AG0215,Agent215,Lastname,agent215@darglobal.com,+971540131083,AI Agent Supervisor,5,1,SYSTEM,2024-11-21 10:38:39.941208
+216,AG0216,Agent216,Lastname,agent216@darglobal.com,+91537639184,Lead Qualifier,9,1,SYSTEM,2024-11-23 10:38:39.941330
+217,AG0217,Agent217,Lastname,agent217@darglobal.com,+968545745469,AI Agent Supervisor,8,1,SYSTEM,2025-07-03 10:38:39.941447
+218,AG0218,Agent218,Lastname,agent218@darglobal.com,+91520515189,Team Leader,8,1,SYSTEM,2025-06-25 10:38:39.941575
+219,AG0219,Agent219,Lastname,agent219@darglobal.com,+968510563214,AI Agent Supervisor,10,1,SYSTEM,2025-08-27 10:38:39.941694
+220,AG0220,Agent220,Lastname,agent220@darglobal.com,+971581597126,Senior Closer,7,1,SYSTEM,2025-06-28 10:38:39.941816
+221,AG0221,Agent221,Lastname,agent221@darglobal.com,+971501524102,Team Leader,5,1,SYSTEM,2025-03-30 10:38:39.941957
+222,AG0222,Agent222,Lastname,agent222@darglobal.com,+971566626362,Luxury Specialist,2,1,SYSTEM,2025-06-11 10:38:39.942133
+223,AG0223,Agent223,Lastname,agent223@darglobal.com,+966510822814,AI Agent Supervisor,2,1,SYSTEM,2025-04-04 10:38:39.942281
+224,AG0224,Agent224,Lastname,agent224@darglobal.com,+971525841846,Follow-up Specialist,7,1,SYSTEM,2025-09-18 10:38:39.942404
+225,AG0225,Agent225,Lastname,agent225@darglobal.com,+91523215061,Senior Closer,2,1,SYSTEM,2025-06-06 10:38:39.942526
+226,AG0226,Agent226,Lastname,agent226@darglobal.com,+971592733985,Team Leader,7,1,SYSTEM,2024-12-22 10:38:39.942641
+227,AG0227,Agent227,Lastname,agent227@darglobal.com,+974532339834,Team Leader,4,1,SYSTEM,2024-11-08 10:38:39.942727
+228,AG0228,Agent228,Lastname,agent228@darglobal.com,+91547379179,Senior Closer,8,1,SYSTEM,2024-12-30 10:38:39.942795
+229,AG0229,Agent229,Lastname,agent229@darglobal.com,+966564884070,Follow-up Specialist,5,1,SYSTEM,2025-03-29 10:38:39.942860
+230,AG0230,Agent230,Lastname,agent230@darglobal.com,+974546695565,Team Leader,2,1,SYSTEM,2024-12-03 10:38:39.942936
+231,AG0231,Agent231,Lastname,agent231@darglobal.com,+966576767936,Luxury Specialist,9,1,SYSTEM,2024-10-13 10:38:39.943003
+232,AG0232,Agent232,Lastname,agent232@darglobal.com,+968581242298,Lead Qualifier,5,1,SYSTEM,2025-03-08 10:38:39.943170
+233,AG0233,Agent233,Lastname,agent233@darglobal.com,+974584445004,Lead Qualifier,9,1,SYSTEM,2025-01-05 10:38:39.943263
+234,AG0234,Agent234,Lastname,agent234@darglobal.com,+974522470291,Luxury Specialist,6,1,SYSTEM,2024-10-27 10:38:39.943339
+235,AG0235,Agent235,Lastname,agent235@darglobal.com,+974587093473,Senior Closer,10,0,SYSTEM,2025-01-06 10:38:39.943405
+236,AG0236,Agent236,Lastname,agent236@darglobal.com,+91520521013,Senior Closer,9,1,SYSTEM,2025-01-24 10:38:39.943484
+237,AG0237,Agent237,Lastname,agent237@darglobal.com,+91543951994,Lead Qualifier,3,1,SYSTEM,2025-07-22 10:38:39.943597
+238,AG0238,Agent238,Lastname,agent238@darglobal.com,+966596362498,AI Agent Supervisor,6,1,SYSTEM,2025-06-25 10:38:39.943711
+239,AG0239,Agent239,Lastname,agent239@darglobal.com,+966585561923,Team Leader,5,1,SYSTEM,2025-06-09 10:38:39.943829
+240,AG0240,Agent240,Lastname,agent240@darglobal.com,+974598609786,Follow-up Specialist,9,0,SYSTEM,2025-02-08 10:38:39.943954
+241,AG0241,Agent241,Lastname,agent241@darglobal.com,+968517920169,Senior Closer,8,1,SYSTEM,2025-02-08 10:38:39.944142
+242,AG0242,Agent242,Lastname,agent242@darglobal.com,+968521827621,AI Agent Supervisor,5,0,SYSTEM,2025-08-16 10:38:39.944281
+243,AG0243,Agent243,Lastname,agent243@darglobal.com,+968567511983,Luxury Specialist,5,1,SYSTEM,2025-05-31 10:38:39.944432
+244,AG0244,Agent244,Lastname,agent244@darglobal.com,+91550837727,Team Leader,3,1,SYSTEM,2025-07-28 10:38:39.944557
+245,AG0245,Agent245,Lastname,agent245@darglobal.com,+971553811239,AI Agent Supervisor,1,1,SYSTEM,2025-04-28 10:38:39.944668
+246,AG0246,Agent246,Lastname,agent246@darglobal.com,+968529342048,AI Agent Supervisor,9,1,SYSTEM,2025-08-08 10:38:39.944780
+247,AG0247,Agent247,Lastname,agent247@darglobal.com,+966551900771,AI Agent Supervisor,6,1,SYSTEM,2025-05-12 10:38:39.944893
+248,AG0248,Agent248,Lastname,agent248@darglobal.com,+974517486878,Lead Qualifier,10,1,SYSTEM,2025-04-17 10:38:39.945027
+249,AG0249,Agent249,Lastname,agent249@darglobal.com,+971523480675,Lead Qualifier,7,1,SYSTEM,2025-09-09 10:38:39.945208
+250,AG0250,Agent250,Lastname,agent250@darglobal.com,+974553412976,Senior Closer,1,1,SYSTEM,2024-10-03 10:38:39.945337
+251,AG0251,Agent251,Lastname,agent251@darglobal.com,+968538965695,Luxury Specialist,3,1,SYSTEM,2025-07-10 10:38:39.945454
+252,AG0252,Agent252,Lastname,agent252@darglobal.com,+966573663899,Follow-up Specialist,5,1,SYSTEM,2025-03-10 10:38:39.945571
+253,AG0253,Agent253,Lastname,agent253@darglobal.com,+968501656671,Follow-up Specialist,2,1,SYSTEM,2025-03-14 10:38:39.945790
+254,AG0254,Agent254,Lastname,agent254@darglobal.com,+966590126859,Team Leader,1,1,SYSTEM,2025-03-13 10:38:39.945927
+255,AG0255,Agent255,Lastname,agent255@darglobal.com,+971552374647,AI Agent Supervisor,2,1,SYSTEM,2025-03-14 10:38:39.946050
+256,AG0256,Agent256,Lastname,agent256@darglobal.com,+91536328139,Follow-up Specialist,3,1,SYSTEM,2025-09-15 10:38:39.946240
+257,AG0257,Agent257,Lastname,agent257@darglobal.com,+91595019914,Senior Closer,6,1,SYSTEM,2025-07-26 10:38:39.946364
+258,AG0258,Agent258,Lastname,agent258@darglobal.com,+971511546081,Team Leader,2,1,SYSTEM,2025-06-15 10:38:39.946485
+259,AG0259,Agent259,Lastname,agent259@darglobal.com,+91544924392,Luxury Specialist,4,1,SYSTEM,2025-03-31 10:38:39.946607
+260,AG0260,Agent260,Lastname,agent260@darglobal.com,+968527209162,AI Agent Supervisor,3,1,SYSTEM,2025-01-29 10:38:39.946731
+261,AG0261,Agent261,Lastname,agent261@darglobal.com,+968553773276,Luxury Specialist,5,1,SYSTEM,2025-01-03 10:38:39.946852
+262,AG0262,Agent262,Lastname,agent262@darglobal.com,+974520610500,AI Agent Supervisor,1,1,SYSTEM,2025-09-07 10:38:39.947005
+263,AG0263,Agent263,Lastname,agent263@darglobal.com,+971555229602,Senior Closer,9,1,SYSTEM,2024-12-22 10:38:39.947274
+264,AG0264,Agent264,Lastname,agent264@darglobal.com,+968519155151,AI Agent Supervisor,8,1,SYSTEM,2025-04-30 10:38:39.947403
+265,AG0265,Agent265,Lastname,agent265@darglobal.com,+91589858638,AI Agent Supervisor,2,1,SYSTEM,2024-10-08 10:38:39.947560
+266,AG0266,Agent266,Lastname,agent266@darglobal.com,+968505481140,Follow-up Specialist,10,1,SYSTEM,2025-08-07 10:38:39.947702
+267,AG0267,Agent267,Lastname,agent267@darglobal.com,+966505290717,Team Leader,7,1,SYSTEM,2025-01-29 10:38:39.947830
+268,AG0268,Agent268,Lastname,agent268@darglobal.com,+968555940773,Senior Closer,6,1,SYSTEM,2025-05-28 10:38:39.947955
+269,AG0269,Agent269,Lastname,agent269@darglobal.com,+971570047063,AI Agent Supervisor,1,0,SYSTEM,2024-12-22 10:38:39.948064
+270,AG0270,Agent270,Lastname,agent270@darglobal.com,+971548055661,Team Leader,9,1,SYSTEM,2025-06-12 10:38:39.948263
+271,AG0271,Agent271,Lastname,agent271@darglobal.com,+966535943815,AI Agent Supervisor,6,1,SYSTEM,2025-08-12 10:38:39.948373
+272,AG0272,Agent272,Lastname,agent272@darglobal.com,+966538836811,Senior Closer,6,1,SYSTEM,2025-04-27 10:38:39.948484
+273,AG0273,Agent273,Lastname,agent273@darglobal.com,+966541965471,Lead Qualifier,1,1,SYSTEM,2024-12-07 10:38:39.948607
+274,AG0274,Agent274,Lastname,agent274@darglobal.com,+966529536204,Team Leader,1,1,SYSTEM,2025-04-21 10:38:39.948701
+275,AG0275,Agent275,Lastname,agent275@darglobal.com,+971537436581,Lead Qualifier,10,1,SYSTEM,2025-06-08 10:38:39.948791
+276,AG0276,Agent276,Lastname,agent276@darglobal.com,+968546462256,AI Agent Supervisor,3,1,SYSTEM,2025-09-13 10:38:39.948880
+277,AG0277,Agent277,Lastname,agent277@darglobal.com,+966588997222,Senior Closer,2,1,SYSTEM,2024-10-29 10:38:39.948979
+278,AG0278,Agent278,Lastname,agent278@darglobal.com,+971501308507,Team Leader,4,1,SYSTEM,2025-01-14 10:38:39.949116
+279,AG0279,Agent279,Lastname,agent279@darglobal.com,+974585111891,Follow-up Specialist,6,1,SYSTEM,2025-09-19 10:38:39.949230
+280,AG0280,Agent280,Lastname,agent280@darglobal.com,+966533283771,Lead Qualifier,2,1,SYSTEM,2025-06-27 10:38:39.949322
+281,AG0281,Agent281,Lastname,agent281@darglobal.com,+968514150540,Senior Closer,3,1,SYSTEM,2025-07-29 10:38:39.949423
+282,AG0282,Agent282,Lastname,agent282@darglobal.com,+968536286070,Luxury Specialist,7,0,SYSTEM,2024-11-26 10:38:39.949514
+283,AG0283,Agent283,Lastname,agent283@darglobal.com,+971589597893,Lead Qualifier,3,1,SYSTEM,2024-10-05 10:38:39.949692
+284,AG0284,Agent284,Lastname,agent284@darglobal.com,+966581718171,Lead Qualifier,3,1,SYSTEM,2025-06-21 10:38:39.949787
+285,AG0285,Agent285,Lastname,agent285@darglobal.com,+966577066032,Team Leader,5,1,SYSTEM,2025-08-29 10:38:39.949902
+286,AG0286,Agent286,Lastname,agent286@darglobal.com,+968516169764,Follow-up Specialist,4,1,SYSTEM,2025-08-03 10:38:39.950005
+287,AG0287,Agent287,Lastname,agent287@darglobal.com,+966560111794,Senior Closer,4,0,SYSTEM,2024-10-03 10:38:39.950155
+288,AG0288,Agent288,Lastname,agent288@darglobal.com,+968517066318,Lead Qualifier,4,1,SYSTEM,2025-01-22 10:38:39.950255
+289,AG0289,Agent289,Lastname,agent289@darglobal.com,+974511186361,Team Leader,3,1,SYSTEM,2025-08-13 10:38:39.950349
+290,AG0290,Agent290,Lastname,agent290@darglobal.com,+91561688718,Senior Closer,3,1,SYSTEM,2025-06-14 10:38:39.950440
+291,AG0291,Agent291,Lastname,agent291@darglobal.com,+971580716715,Team Leader,2,1,SYSTEM,2024-11-01 10:38:39.950530
+292,AG0292,Agent292,Lastname,agent292@darglobal.com,+91515648245,Follow-up Specialist,8,1,SYSTEM,2025-06-30 10:38:39.950620
+293,AG0293,Agent293,Lastname,agent293@darglobal.com,+971506491878,Team Leader,1,1,SYSTEM,2025-08-25 10:38:39.950740
+294,AG0294,Agent294,Lastname,agent294@darglobal.com,+971561144226,Luxury Specialist,5,1,SYSTEM,2025-04-11 10:38:39.950840
+295,AG0295,Agent295,Lastname,agent295@darglobal.com,+91578502806,AI Agent Supervisor,10,1,SYSTEM,2024-12-26 10:38:39.950952
+296,AG0296,Agent296,Lastname,agent296@darglobal.com,+971548436828,Lead Qualifier,9,1,SYSTEM,2024-12-20 10:38:39.951051
+297,AG0297,Agent297,Lastname,agent297@darglobal.com,+974547602635,Senior Closer,9,1,SYSTEM,2024-12-12 10:38:39.951290
+298,AG0298,Agent298,Lastname,agent298@darglobal.com,+966550629738,Luxury Specialist,5,1,SYSTEM,2024-11-21 10:38:39.951392
+299,AG0299,Agent299,Lastname,agent299@darglobal.com,+966576818039,Follow-up Specialist,8,1,SYSTEM,2025-02-27 10:38:39.951486
+300,AG0300,Agent300,Lastname,agent300@darglobal.com,+968537176570,Luxury Specialist,4,1,SYSTEM,2025-05-15 10:38:39.951581
+301,AG0301,Agent301,Lastname,agent301@darglobal.com,+966553175588,Follow-up Specialist,10,0,SYSTEM,2025-05-26 10:38:39.951677
+302,AG0302,Agent302,Lastname,agent302@darglobal.com,+974563131845,Luxury Specialist,5,1,SYSTEM,2025-04-14 10:38:39.951771
+303,AG0303,Agent303,Lastname,agent303@darglobal.com,+966595222450,Team Leader,10,1,SYSTEM,2025-01-23 10:38:39.951873
+304,AG0304,Agent304,Lastname,agent304@darglobal.com,+974521217066,Team Leader,2,1,SYSTEM,2024-12-11 10:38:39.951982
+305,AG0305,Agent305,Lastname,agent305@darglobal.com,+966575643942,AI Agent Supervisor,2,1,SYSTEM,2024-12-02 10:38:39.952126
+306,AG0306,Agent306,Lastname,agent306@darglobal.com,+968503184790,Team Leader,4,1,SYSTEM,2025-01-31 10:38:39.952241
+307,AG0307,Agent307,Lastname,agent307@darglobal.com,+968573798006,Lead Qualifier,5,1,SYSTEM,2025-01-01 10:38:39.952335
+308,AG0308,Agent308,Lastname,agent308@darglobal.com,+91526844511,Team Leader,5,1,SYSTEM,2025-03-31 10:38:39.952429
+309,AG0309,Agent309,Lastname,agent309@darglobal.com,+971523116992,Lead Qualifier,10,0,SYSTEM,2025-04-30 10:38:39.952521
+310,AG0310,Agent310,Lastname,agent310@darglobal.com,+971589588014,Senior Closer,8,1,SYSTEM,2024-12-07 10:38:39.952618
+311,AG0311,Agent311,Lastname,agent311@darglobal.com,+966514497054,Team Leader,5,1,SYSTEM,2024-09-26 10:38:39.952715
+312,AG0312,Agent312,Lastname,agent312@darglobal.com,+971520717501,Follow-up Specialist,2,1,SYSTEM,2025-07-21 10:38:39.952817
+313,AG0313,Agent313,Lastname,agent313@darglobal.com,+966597447072,Senior Closer,9,1,SYSTEM,2025-07-11 10:38:39.952944
+314,AG0314,Agent314,Lastname,agent314@darglobal.com,+91519397196,Senior Closer,4,1,SYSTEM,2025-06-12 10:38:39.953052
+315,AG0315,Agent315,Lastname,agent315@darglobal.com,+968548719461,AI Agent Supervisor,6,1,SYSTEM,2024-12-17 10:38:39.953214
+316,AG0316,Agent316,Lastname,agent316@darglobal.com,+974522910282,Senior Closer,8,1,SYSTEM,2025-06-25 10:38:39.953317
+317,AG0317,Agent317,Lastname,agent317@darglobal.com,+91551908238,Senior Closer,10,1,SYSTEM,2024-11-10 10:38:39.953415
+318,AG0318,Agent318,Lastname,agent318@darglobal.com,+91548076248,Senior Closer,1,1,SYSTEM,2024-12-05 10:38:39.953510
+319,AG0319,Agent319,Lastname,agent319@darglobal.com,+968562994533,Lead Qualifier,3,1,SYSTEM,2024-10-27 10:38:39.953604
+320,AG0320,Agent320,Lastname,agent320@darglobal.com,+971501912584,AI Agent Supervisor,5,1,SYSTEM,2024-11-22 10:38:39.953699
+321,AG0321,Agent321,Lastname,agent321@darglobal.com,+971544804549,Follow-up Specialist,5,1,SYSTEM,2025-04-22 10:38:39.953792
+322,AG0322,Agent322,Lastname,agent322@darglobal.com,+968575902244,Follow-up Specialist,4,1,SYSTEM,2024-10-14 10:38:39.953907
+323,AG0323,Agent323,Lastname,agent323@darglobal.com,+971577411194,AI Agent Supervisor,5,1,SYSTEM,2024-10-21 10:38:39.954163
+324,AG0324,Agent324,Lastname,agent324@darglobal.com,+91598915451,Senior Closer,4,1,SYSTEM,2024-12-25 10:38:39.954280
+325,AG0325,Agent325,Lastname,agent325@darglobal.com,+968544810380,Team Leader,3,1,SYSTEM,2025-08-01 10:38:39.954387
+326,AG0326,Agent326,Lastname,agent326@darglobal.com,+974593526766,Follow-up Specialist,3,1,SYSTEM,2025-06-08 10:38:39.954494
+327,AG0327,Agent327,Lastname,agent327@darglobal.com,+968597169328,Luxury Specialist,4,1,SYSTEM,2024-10-07 10:38:39.954602
+328,AG0328,Agent328,Lastname,agent328@darglobal.com,+974567284075,Lead Qualifier,7,1,SYSTEM,2025-07-13 10:38:39.954711
+329,AG0329,Agent329,Lastname,agent329@darglobal.com,+966520668329,Luxury Specialist,10,1,SYSTEM,2025-06-30 10:38:39.954829
+330,AG0330,Agent330,Lastname,agent330@darglobal.com,+968513952821,Senior Closer,8,1,SYSTEM,2025-08-06 10:38:39.954947
+331,AG0331,Agent331,Lastname,agent331@darglobal.com,+974511098252,Team Leader,6,1,SYSTEM,2025-02-14 10:38:39.955057
+332,AG0332,Agent332,Lastname,agent332@darglobal.com,+966553660697,Senior Closer,10,1,SYSTEM,2025-05-24 10:38:39.955540
+333,AG0333,Agent333,Lastname,agent333@darglobal.com,+91585661847,Senior Closer,10,1,SYSTEM,2025-07-16 10:38:39.955694
+334,AG0334,Agent334,Lastname,agent334@darglobal.com,+971556728215,AI Agent Supervisor,4,1,SYSTEM,2025-03-04 10:38:39.955805
+335,AG0335,Agent335,Lastname,agent335@darglobal.com,+966507667857,AI Agent Supervisor,4,1,SYSTEM,2025-01-23 10:38:39.955933
+336,AG0336,Agent336,Lastname,agent336@darglobal.com,+91550526894,Senior Closer,3,1,SYSTEM,2025-04-14 10:38:39.956046
+337,AG0337,Agent337,Lastname,agent337@darglobal.com,+91508437712,Team Leader,5,1,SYSTEM,2025-04-15 10:38:39.956223
+338,AG0338,Agent338,Lastname,agent338@darglobal.com,+974556681097,Senior Closer,9,1,SYSTEM,2025-01-07 10:38:39.956342
+339,AG0339,Agent339,Lastname,agent339@darglobal.com,+974514160134,Luxury Specialist,2,1,SYSTEM,2025-05-20 10:38:39.956456
+340,AG0340,Agent340,Lastname,agent340@darglobal.com,+966521200624,AI Agent Supervisor,7,1,SYSTEM,2024-11-24 10:38:39.956567
+341,AG0341,Agent341,Lastname,agent341@darglobal.com,+974540670787,Lead Qualifier,6,1,SYSTEM,2025-04-08 10:38:39.956682
+342,AG0342,Agent342,Lastname,agent342@darglobal.com,+91572668141,Follow-up Specialist,8,1,SYSTEM,2025-04-11 10:38:39.956795
+343,AG0343,Agent343,Lastname,agent343@darglobal.com,+974546692999,Senior Closer,6,1,SYSTEM,2025-03-10 10:38:39.956926
+344,AG0344,Agent344,Lastname,agent344@darglobal.com,+91581861168,Follow-up Specialist,2,1,SYSTEM,2025-08-26 10:38:39.957043
+345,AG0345,Agent345,Lastname,agent345@darglobal.com,+91590827527,Team Leader,8,1,SYSTEM,2024-11-26 10:38:39.957241
+346,AG0346,Agent346,Lastname,agent346@darglobal.com,+91583144761,AI Agent Supervisor,6,1,SYSTEM,2025-02-19 10:38:39.957358
+347,AG0347,Agent347,Lastname,agent347@darglobal.com,+968524005377,Team Leader,1,1,SYSTEM,2024-12-10 10:38:39.957471
+348,AG0348,Agent348,Lastname,agent348@darglobal.com,+968577202069,Follow-up Specialist,10,1,SYSTEM,2024-10-24 10:38:39.957586
+349,AG0349,Agent349,Lastname,agent349@darglobal.com,+91510758430,Senior Closer,7,1,SYSTEM,2025-04-17 10:38:39.957700
+350,AG0350,Agent350,Lastname,agent350@darglobal.com,+966539970870,Follow-up Specialist,1,1,SYSTEM,2025-05-09 10:38:39.957812
+351,AG0351,Agent351,Lastname,agent351@darglobal.com,+968526356226,Team Leader,7,1,SYSTEM,2025-06-10 10:38:39.957942
+352,AG0352,Agent352,Lastname,agent352@darglobal.com,+91579157203,Follow-up Specialist,1,1,SYSTEM,2025-04-26 10:38:39.958052
+353,AG0353,Agent353,Lastname,agent353@darglobal.com,+968530267797,Lead Qualifier,8,1,SYSTEM,2025-04-14 10:38:39.958240
+354,AG0354,Agent354,Lastname,agent354@darglobal.com,+91558272527,Follow-up Specialist,6,1,SYSTEM,2025-05-03 10:38:39.958358
+355,AG0355,Agent355,Lastname,agent355@darglobal.com,+968593966816,Lead Qualifier,2,1,SYSTEM,2025-01-07 10:38:39.958469
+356,AG0356,Agent356,Lastname,agent356@darglobal.com,+974587210744,Senior Closer,1,1,SYSTEM,2025-03-26 10:38:39.958586
+357,AG0357,Agent357,Lastname,agent357@darglobal.com,+971529396163,Lead Qualifier,7,1,SYSTEM,2025-05-02 10:38:39.958701
+358,AG0358,Agent358,Lastname,agent358@darglobal.com,+968532963684,Follow-up Specialist,10,1,SYSTEM,2025-08-04 10:38:39.958810
+359,AG0359,Agent359,Lastname,agent359@darglobal.com,+971536432549,Lead Qualifier,3,1,SYSTEM,2025-04-17 10:38:39.958931
+360,AG0360,Agent360,Lastname,agent360@darglobal.com,+974537711695,Follow-up Specialist,9,1,SYSTEM,2025-04-12 10:38:39.959038
+361,AG0361,Agent361,Lastname,agent361@darglobal.com,+971532002177,AI Agent Supervisor,2,1,SYSTEM,2025-01-09 10:38:39.959281
+362,AG0362,Agent362,Lastname,agent362@darglobal.com,+971542866200,Lead Qualifier,9,1,SYSTEM,2024-12-07 10:38:39.959396
+363,AG0363,Agent363,Lastname,agent363@darglobal.com,+968554206558,Team Leader,1,1,SYSTEM,2024-11-16 10:38:39.959514
+364,AG0364,Agent364,Lastname,agent364@darglobal.com,+91521609907,AI Agent Supervisor,3,1,SYSTEM,2025-08-28 10:38:39.959626
+365,AG0365,Agent365,Lastname,agent365@darglobal.com,+91524362375,Luxury Specialist,2,1,SYSTEM,2025-07-05 10:38:39.959732
+366,AG0366,Agent366,Lastname,agent366@darglobal.com,+968575013292,Follow-up Specialist,4,1,SYSTEM,2024-11-10 10:38:39.959940
+367,AG0367,Agent367,Lastname,agent367@darglobal.com,+91575968554,Team Leader,2,1,SYSTEM,2024-12-09 10:38:39.960055
+368,AG0368,Agent368,Lastname,agent368@darglobal.com,+974508336900,AI Agent Supervisor,2,1,SYSTEM,2025-05-15 10:38:39.960272
+369,AG0369,Agent369,Lastname,agent369@darglobal.com,+974518268849,Luxury Specialist,8,1,SYSTEM,2025-07-01 10:38:39.960394
+370,AG0370,Agent370,Lastname,agent370@darglobal.com,+966574085474,Luxury Specialist,9,1,SYSTEM,2025-01-02 10:38:39.960509
+371,AG0371,Agent371,Lastname,agent371@darglobal.com,+968540467715,Follow-up Specialist,7,1,SYSTEM,2025-06-13 10:38:39.960645
+372,AG0372,Agent372,Lastname,agent372@darglobal.com,+968575173084,Follow-up Specialist,4,1,SYSTEM,2025-02-03 10:38:39.960761
+373,AG0373,Agent373,Lastname,agent373@darglobal.com,+971524525886,Luxury Specialist,4,1,SYSTEM,2025-01-09 10:38:39.960884
+374,AG0374,Agent374,Lastname,agent374@darglobal.com,+91545038050,AI Agent Supervisor,6,1,SYSTEM,2025-02-05 10:38:39.961008
+375,AG0375,Agent375,Lastname,agent375@darglobal.com,+91582913877,Luxury Specialist,7,1,SYSTEM,2025-02-15 10:38:39.961184
+376,AG0376,Agent376,Lastname,agent376@darglobal.com,+91582430197,Team Leader,5,1,SYSTEM,2024-11-12 10:38:39.961305
+377,AG0377,Agent377,Lastname,agent377@darglobal.com,+91547246348,Luxury Specialist,10,1,SYSTEM,2025-02-21 10:38:39.961423
+378,AG0378,Agent378,Lastname,agent378@darglobal.com,+91587132497,Luxury Specialist,4,1,SYSTEM,2025-03-18 10:38:39.961532
+379,AG0379,Agent379,Lastname,agent379@darglobal.com,+974572487614,Luxury Specialist,4,1,SYSTEM,2025-05-28 10:38:39.961643
+380,AG0380,Agent380,Lastname,agent380@darglobal.com,+971509447933,Follow-up Specialist,2,1,SYSTEM,2025-01-13 10:38:39.961756
+381,AG0381,Agent381,Lastname,agent381@darglobal.com,+971531216359,AI Agent Supervisor,9,1,SYSTEM,2025-08-11 10:38:39.961877
+382,AG0382,Agent382,Lastname,agent382@darglobal.com,+91580411177,Luxury Specialist,1,1,SYSTEM,2025-09-05 10:38:39.962006
+383,AG0383,Agent383,Lastname,agent383@darglobal.com,+966522897064,Senior Closer,2,1,SYSTEM,2025-08-24 10:38:39.962200
+384,AG0384,Agent384,Lastname,agent384@darglobal.com,+966530822201,Follow-up Specialist,8,1,SYSTEM,2025-03-03 10:38:39.962324
+385,AG0385,Agent385,Lastname,agent385@darglobal.com,+971548743175,AI Agent Supervisor,6,1,SYSTEM,2025-07-05 10:38:39.962437
+386,AG0386,Agent386,Lastname,agent386@darglobal.com,+966517832891,Luxury Specialist,3,1,SYSTEM,2025-06-27 10:38:39.962545
+387,AG0387,Agent387,Lastname,agent387@darglobal.com,+91571214087,Luxury Specialist,8,1,SYSTEM,2025-08-10 10:38:39.962657
+388,AG0388,Agent388,Lastname,agent388@darglobal.com,+966541164396,AI Agent Supervisor,8,1,SYSTEM,2025-09-05 10:38:39.962768
+389,AG0389,Agent389,Lastname,agent389@darglobal.com,+91536847763,Luxury Specialist,8,1,SYSTEM,2025-02-06 10:38:39.962881
+390,AG0390,Agent390,Lastname,agent390@darglobal.com,+974508589747,AI Agent Supervisor,7,1,SYSTEM,2025-08-02 10:38:39.963007
+391,AG0391,Agent391,Lastname,agent391@darglobal.com,+974525258425,Luxury Specialist,5,1,SYSTEM,2024-10-05 10:38:39.963260
+392,AG0392,Agent392,Lastname,agent392@darglobal.com,+971589957925,Follow-up Specialist,1,1,SYSTEM,2025-01-09 10:38:39.963373
+393,AG0393,Agent393,Lastname,agent393@darglobal.com,+966531099208,Lead Qualifier,2,0,SYSTEM,2024-12-04 10:38:39.963505
+394,AG0394,Agent394,Lastname,agent394@darglobal.com,+968529009512,Senior Closer,9,1,SYSTEM,2025-03-16 10:38:39.963612
+395,AG0395,Agent395,Lastname,agent395@darglobal.com,+971541727753,Luxury Specialist,4,1,SYSTEM,2025-01-07 10:38:39.963725
+396,AG0396,Agent396,Lastname,agent396@darglobal.com,+91585567156,Follow-up Specialist,2,1,SYSTEM,2024-12-25 10:38:39.963838
+397,AG0397,Agent397,Lastname,agent397@darglobal.com,+966593774759,Lead Qualifier,7,1,SYSTEM,2024-11-11 10:38:39.963958
+398,AG0398,Agent398,Lastname,agent398@darglobal.com,+968558638329,Senior Closer,2,1,SYSTEM,2025-02-21 10:38:39.964071
+399,AG0399,Agent399,Lastname,agent399@darglobal.com,+968542822943,AI Agent Supervisor,1,1,SYSTEM,2025-05-23 10:38:39.964261
+400,AG0400,Agent400,Lastname,agent400@darglobal.com,+966536213515,Senior Closer,2,1,SYSTEM,2025-04-26 10:38:39.964376
+401,AG0401,Agent401,Lastname,agent401@darglobal.com,+968597101535,AI Agent Supervisor,6,1,SYSTEM,2024-10-12 10:38:39.964490
+402,AG0402,Agent402,Lastname,agent402@darglobal.com,+968551212060,Luxury Specialist,2,1,SYSTEM,2025-02-21 10:38:39.964606
+403,AG0403,Agent403,Lastname,agent403@darglobal.com,+968522700314,Lead Qualifier,3,1,SYSTEM,2025-08-09 10:38:39.964736
+404,AG0404,Agent404,Lastname,agent404@darglobal.com,+91530779669,AI Agent Supervisor,5,1,SYSTEM,2025-03-22 10:38:39.964850
+405,AG0405,Agent405,Lastname,agent405@darglobal.com,+974570001342,Team Leader,3,1,SYSTEM,2025-08-23 10:38:39.964972
+406,AG0406,Agent406,Lastname,agent406@darglobal.com,+968548495982,Senior Closer,5,1,SYSTEM,2024-09-25 10:38:39.965086
+407,AG0407,Agent407,Lastname,agent407@darglobal.com,+971540078991,Senior Closer,5,1,SYSTEM,2025-06-10 10:38:39.965266
+408,AG0408,Agent408,Lastname,agent408@darglobal.com,+974520686655,Lead Qualifier,2,1,SYSTEM,2025-09-12 10:38:39.965380
+409,AG0409,Agent409,Lastname,agent409@darglobal.com,+91561509503,Team Leader,7,1,SYSTEM,2025-07-18 10:38:39.965594
+410,AG0410,Agent410,Lastname,agent410@darglobal.com,+966501116271,Luxury Specialist,9,1,SYSTEM,2025-06-28 10:38:39.965709
+411,AG0411,Agent411,Lastname,agent411@darglobal.com,+971547204953,Lead Qualifier,6,1,SYSTEM,2025-09-08 10:38:39.965825
+412,AG0412,Agent412,Lastname,agent412@darglobal.com,+966588362401,Luxury Specialist,9,1,SYSTEM,2025-01-22 10:38:39.965964
+413,AG0413,Agent413,Lastname,agent413@darglobal.com,+974544564078,Luxury Specialist,4,1,SYSTEM,2025-08-29 10:38:39.966139
+414,AG0414,Agent414,Lastname,agent414@darglobal.com,+974555073945,Luxury Specialist,6,1,SYSTEM,2024-09-28 10:38:39.966282
+415,AG0415,Agent415,Lastname,agent415@darglobal.com,+91545677485,Follow-up Specialist,9,1,SYSTEM,2024-12-23 10:38:39.966398
+416,AG0416,Agent416,Lastname,agent416@darglobal.com,+968543420892,Team Leader,3,1,SYSTEM,2024-10-21 10:38:39.966513
+417,AG0417,Agent417,Lastname,agent417@darglobal.com,+971566329075,Follow-up Specialist,8,1,SYSTEM,2025-04-13 10:38:39.966625
+418,AG0418,Agent418,Lastname,agent418@darglobal.com,+971536059026,Follow-up Specialist,3,1,SYSTEM,2025-02-23 10:38:39.966749
+419,AG0419,Agent419,Lastname,agent419@darglobal.com,+91515663645,Lead Qualifier,6,1,SYSTEM,2024-10-01 10:38:39.966860
+420,AG0420,Agent420,Lastname,agent420@darglobal.com,+974511592111,Luxury Specialist,4,1,SYSTEM,2025-06-01 10:38:39.966975
+421,AG0421,Agent421,Lastname,agent421@darglobal.com,+966507997043,Senior Closer,9,1,SYSTEM,2024-11-25 10:38:39.967188
+422,AG0422,Agent422,Lastname,agent422@darglobal.com,+966564416144,Team Leader,4,1,SYSTEM,2025-08-06 10:38:39.967333
+423,AG0423,Agent423,Lastname,agent423@darglobal.com,+974515697605,Team Leader,7,1,SYSTEM,2024-11-01 10:38:39.967458
+424,AG0424,Agent424,Lastname,agent424@darglobal.com,+966513099507,Luxury Specialist,10,1,SYSTEM,2025-06-07 10:38:39.967569
+425,AG0425,Agent425,Lastname,agent425@darglobal.com,+966582450685,Team Leader,6,1,SYSTEM,2025-08-02 10:38:39.967688
+426,AG0426,Agent426,Lastname,agent426@darglobal.com,+91539929257,AI Agent Supervisor,10,1,SYSTEM,2024-10-08 10:38:39.967801
+427,AG0427,Agent427,Lastname,agent427@darglobal.com,+91552209619,Senior Closer,5,1,SYSTEM,2025-01-04 10:38:39.967914
+428,AG0428,Agent428,Lastname,agent428@darglobal.com,+968536421189,Lead Qualifier,4,0,SYSTEM,2024-12-01 10:38:39.968037
+429,AG0429,Agent429,Lastname,agent429@darglobal.com,+971513487010,Senior Closer,8,1,SYSTEM,2024-10-31 10:38:39.968219
+430,AG0430,Agent430,Lastname,agent430@darglobal.com,+966511416757,Team Leader,9,1,SYSTEM,2025-04-23 10:38:39.968332
+431,AG0431,Agent431,Lastname,agent431@darglobal.com,+966582096675,Luxury Specialist,8,1,SYSTEM,2024-10-15 10:38:39.968445
+432,AG0432,Agent432,Lastname,agent432@darglobal.com,+968500019675,Team Leader,8,1,SYSTEM,2025-03-24 10:38:39.968554
+433,AG0433,Agent433,Lastname,agent433@darglobal.com,+971504464344,Luxury Specialist,6,1,SYSTEM,2024-11-25 10:38:39.968688
+434,AG0434,Agent434,Lastname,agent434@darglobal.com,+968510151607,AI Agent Supervisor,4,1,SYSTEM,2024-09-24 10:38:39.968803
+435,AG0435,Agent435,Lastname,agent435@darglobal.com,+966509322004,Follow-up Specialist,2,1,SYSTEM,2025-09-15 10:38:39.968917
+436,AG0436,Agent436,Lastname,agent436@darglobal.com,+971558835615,AI Agent Supervisor,4,1,SYSTEM,2025-03-07 10:38:39.969041
+437,AG0437,Agent437,Lastname,agent437@darglobal.com,+91590228137,Lead Qualifier,8,1,SYSTEM,2024-11-13 10:38:39.969211
+438,AG0438,Agent438,Lastname,agent438@darglobal.com,+91553889337,Luxury Specialist,2,1,SYSTEM,2025-06-27 10:38:39.969321
+439,AG0439,Agent439,Lastname,agent439@darglobal.com,+971515851428,Senior Closer,3,1,SYSTEM,2024-10-16 10:38:39.969431
+440,AG0440,Agent440,Lastname,agent440@darglobal.com,+968524723448,Luxury Specialist,9,0,SYSTEM,2025-05-28 10:38:39.969558
+441,AG0441,Agent441,Lastname,agent441@darglobal.com,+968550422654,Lead Qualifier,9,1,SYSTEM,2024-12-07 10:38:39.969682
+442,AG0442,Agent442,Lastname,agent442@darglobal.com,+966550538135,Luxury Specialist,2,1,SYSTEM,2025-08-10 10:38:39.969797
+443,AG0443,Agent443,Lastname,agent443@darglobal.com,+966544882342,Team Leader,1,1,SYSTEM,2025-03-08 10:38:39.970025
+444,AG0444,Agent444,Lastname,agent444@darglobal.com,+971568488768,Lead Qualifier,5,1,SYSTEM,2025-08-31 10:38:39.970220
+445,AG0445,Agent445,Lastname,agent445@darglobal.com,+966554856769,Lead Qualifier,2,1,SYSTEM,2025-05-20 10:38:39.970350
+446,AG0446,Agent446,Lastname,agent446@darglobal.com,+968524567790,Team Leader,10,1,SYSTEM,2025-01-22 10:38:39.970468
+447,AG0447,Agent447,Lastname,agent447@darglobal.com,+966559544511,Luxury Specialist,4,1,SYSTEM,2025-07-16 10:38:39.970592
+448,AG0448,Agent448,Lastname,agent448@darglobal.com,+968583261653,Luxury Specialist,6,1,SYSTEM,2024-12-26 10:38:39.970707
+449,AG0449,Agent449,Lastname,agent449@darglobal.com,+974539247228,Senior Closer,8,1,SYSTEM,2025-08-27 10:38:39.970821
+450,AG0450,Agent450,Lastname,agent450@darglobal.com,+966591326529,Senior Closer,8,1,SYSTEM,2025-08-09 10:38:39.970942
+451,AG0451,Agent451,Lastname,agent451@darglobal.com,+966567552809,Follow-up Specialist,3,1,SYSTEM,2024-12-17 10:38:39.971061
+452,AG0452,Agent452,Lastname,agent452@darglobal.com,+966596127354,Lead Qualifier,3,1,SYSTEM,2024-12-29 10:38:39.971565
+453,AG0453,Agent453,Lastname,agent453@darglobal.com,+968501228807,Follow-up Specialist,9,1,SYSTEM,2025-06-29 10:38:39.971709
+454,AG0454,Agent454,Lastname,agent454@darglobal.com,+966590067502,Team Leader,8,1,SYSTEM,2024-11-10 10:38:39.971817
+455,AG0455,Agent455,Lastname,agent455@darglobal.com,+968551588363,Lead Qualifier,7,1,SYSTEM,2025-01-06 10:38:39.971910
+456,AG0456,Agent456,Lastname,agent456@darglobal.com,+974554134634,Team Leader,1,1,SYSTEM,2025-09-14 10:38:39.972016
+457,AG0457,Agent457,Lastname,agent457@darglobal.com,+91559636639,Follow-up Specialist,5,1,SYSTEM,2025-01-19 10:38:39.972199
+458,AG0458,Agent458,Lastname,agent458@darglobal.com,+974531853087,Senior Closer,7,1,SYSTEM,2025-07-21 10:38:39.972306
+459,AG0459,Agent459,Lastname,agent459@darglobal.com,+91565972086,Luxury Specialist,5,1,SYSTEM,2025-04-13 10:38:39.972404
+460,AG0460,Agent460,Lastname,agent460@darglobal.com,+968529754469,Lead Qualifier,7,1,SYSTEM,2024-11-01 10:38:39.972499
+461,AG0461,Agent461,Lastname,agent461@darglobal.com,+966502592536,Follow-up Specialist,2,1,SYSTEM,2025-05-12 10:38:39.972590
+462,AG0462,Agent462,Lastname,agent462@darglobal.com,+974561963740,Senior Closer,4,1,SYSTEM,2025-05-11 10:38:39.972684
+463,AG0463,Agent463,Lastname,agent463@darglobal.com,+974541156155,Follow-up Specialist,9,1,SYSTEM,2024-09-23 10:38:39.972805
+464,AG0464,Agent464,Lastname,agent464@darglobal.com,+968506703560,Luxury Specialist,8,1,SYSTEM,2025-05-14 10:38:39.972907
+465,AG0465,Agent465,Lastname,agent465@darglobal.com,+968597530331,Team Leader,10,1,SYSTEM,2025-04-19 10:38:39.973027
+466,AG0466,Agent466,Lastname,agent466@darglobal.com,+971529581501,Senior Closer,5,1,SYSTEM,2025-08-19 10:38:39.973220
+467,AG0467,Agent467,Lastname,agent467@darglobal.com,+966589856306,Lead Qualifier,10,1,SYSTEM,2024-12-17 10:38:39.973362
+468,AG0468,Agent468,Lastname,agent468@darglobal.com,+966510897034,Team Leader,3,0,SYSTEM,2024-12-24 10:38:39.973492
+469,AG0469,Agent469,Lastname,agent469@darglobal.com,+971554133825,AI Agent Supervisor,8,0,SYSTEM,2025-08-06 10:38:39.973631
+470,AG0470,Agent470,Lastname,agent470@darglobal.com,+966536204667,Senior Closer,8,1,SYSTEM,2025-05-17 10:38:39.973759
+471,AG0471,Agent471,Lastname,agent471@darglobal.com,+974528563971,Lead Qualifier,9,1,SYSTEM,2025-05-02 10:38:39.973884
+472,AG0472,Agent472,Lastname,agent472@darglobal.com,+91508329442,Senior Closer,5,1,SYSTEM,2025-05-03 10:38:39.974035
+473,AG0473,Agent473,Lastname,agent473@darglobal.com,+968560186000,Senior Closer,3,1,SYSTEM,2025-02-27 10:38:39.974315
+474,AG0474,Agent474,Lastname,agent474@darglobal.com,+971504058848,Team Leader,7,1,SYSTEM,2024-10-03 10:38:39.974416
+475,AG0475,Agent475,Lastname,agent475@darglobal.com,+968528398068,Team Leader,3,1,SYSTEM,2024-10-23 10:38:39.974512
+476,AG0476,Agent476,Lastname,agent476@darglobal.com,+974570001235,Senior Closer,9,1,SYSTEM,2024-12-26 10:38:39.974607
+477,AG0477,Agent477,Lastname,agent477@darglobal.com,+971510539669,Senior Closer,3,1,SYSTEM,2024-12-21 10:38:39.974703
+478,AG0478,Agent478,Lastname,agent478@darglobal.com,+966577337555,Luxury Specialist,7,1,SYSTEM,2025-07-11 10:38:39.974796
+479,AG0479,Agent479,Lastname,agent479@darglobal.com,+974513907579,Senior Closer,3,1,SYSTEM,2025-05-25 10:38:39.974890
+480,AG0480,Agent480,Lastname,agent480@darglobal.com,+91540580924,Follow-up Specialist,8,1,SYSTEM,2024-12-31 10:38:39.974997
+481,AG0481,Agent481,Lastname,agent481@darglobal.com,+966500077175,Follow-up Specialist,9,1,SYSTEM,2024-11-17 10:38:39.975256
+482,AG0482,Agent482,Lastname,agent482@darglobal.com,+974532648168,AI Agent Supervisor,9,0,SYSTEM,2025-07-16 10:38:39.975376
+483,AG0483,Agent483,Lastname,agent483@darglobal.com,+968536566791,Lead Qualifier,9,1,SYSTEM,2025-06-28 10:38:39.975490
+484,AG0484,Agent484,Lastname,agent484@darglobal.com,+966587094903,Luxury Specialist,1,1,SYSTEM,2024-12-28 10:38:39.975587
+485,AG0485,Agent485,Lastname,agent485@darglobal.com,+974576350218,Team Leader,2,1,SYSTEM,2025-04-26 10:38:39.975691
+486,AG0486,Agent486,Lastname,agent486@darglobal.com,+91509909551,Follow-up Specialist,5,1,SYSTEM,2025-03-05 10:38:39.975789
+487,AG0487,Agent487,Lastname,agent487@darglobal.com,+91505994376,Follow-up Specialist,3,1,SYSTEM,2025-02-18 10:38:39.975892
+488,AG0488,Agent488,Lastname,agent488@darglobal.com,+966574931500,Follow-up Specialist,6,1,SYSTEM,2025-08-06 10:38:39.976001
+489,AG0489,Agent489,Lastname,agent489@darglobal.com,+966575261977,Follow-up Specialist,6,1,SYSTEM,2024-11-19 10:38:39.976163
+490,AG0490,Agent490,Lastname,agent490@darglobal.com,+968532436728,Luxury Specialist,3,1,SYSTEM,2024-10-09 10:38:39.976279
+491,AG0491,Agent491,Lastname,agent491@darglobal.com,+968566290435,Team Leader,3,1,SYSTEM,2025-03-12 10:38:39.976373
+492,AG0492,Agent492,Lastname,agent492@darglobal.com,+971517811802,Senior Closer,1,1,SYSTEM,2025-01-03 10:38:39.976561
+493,AG0493,Agent493,Lastname,agent493@darglobal.com,+966512545745,Senior Closer,6,0,SYSTEM,2025-05-09 10:38:39.976705
+494,AG0494,Agent494,Lastname,agent494@darglobal.com,+974503830121,Senior Closer,9,1,SYSTEM,2025-01-24 10:38:39.976819
+495,AG0495,Agent495,Lastname,agent495@darglobal.com,+974536926887,Team Leader,3,1,SYSTEM,2024-10-17 10:38:39.976913
+496,AG0496,Agent496,Lastname,agent496@darglobal.com,+966571178892,Luxury Specialist,6,1,SYSTEM,2025-03-16 10:38:39.977015
+497,AG0497,Agent497,Lastname,agent497@darglobal.com,+974500749971,Follow-up Specialist,1,1,SYSTEM,2024-10-16 10:38:39.977161
+498,AG0498,Agent498,Lastname,agent498@darglobal.com,+91541011120,Team Leader,10,1,SYSTEM,2025-02-01 10:38:39.977269
+499,AG0499,Agent499,Lastname,agent499@darglobal.com,+966517962327,Luxury Specialist,1,1,SYSTEM,2024-10-13 10:38:39.977364
+500,AG0500,Agent500,Lastname,agent500@darglobal.com,+91506327090,AI Agent Supervisor,7,1,SYSTEM,2025-08-14 10:38:39.977457
