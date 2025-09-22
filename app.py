@@ -23,8 +23,8 @@ except Exception:
 # Page configuration and executive styling
 # -----------------------------------------------------------------------------
 st.set_page_config(
-    page_title="DAR Global - CEO Dashboard",
-    page_icon="🏗️",
+    page_title="DAR Global - Dashboard",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -150,8 +150,8 @@ data = load_data()
 # -----------------------------------------------------------------------------
 st.markdown(f"""
 <div class="main-header">
-  <h1>🏗️ DAR Global — CEO Executive Dashboard</h1>
-  <h3>Luxury Real Estate AI-Powered Analytics • Q3 2025</h3>
+  <h1>DAR Global — Executive Dashboard</h1>
+  <h3>AI-Powered Analytics • </h3>
   <p style="margin: 6px 0 0 0; color: {EXEC_GREEN};">
     Last Updated: {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}
   </p>
