@@ -350,24 +350,43 @@ else:
 # Dashboard sections
 # -----------------------------------------------------------------------------
 def show_executive_summary(d):
-    leads = d["leads"]
-    agents = d["agents"] if d.get("agents") is not None else pd.DataFrame()
-    calls = d["calls"]
+    import plotly.express as px
+    import plotly.graph_objects as go
+    import pandas as pd
+    import numpy as np
 
-    total_leads = len(leads) if leads is not None else 0
-    active_pipeline = leads["EstimatedBudget"].sum() if (leads is not None and "EstimatedBudget" in leads.columns) else 0.0
-    won_revenue = leads.loc[leads["LeadStageId"].eq(6), "EstimatedBudget"].sum() if (leads is not None and "LeadStageId" in leads.columns) else 0.0
-    won_leads = (leads["LeadStageId"] == 6).sum() if (leads is not None and "LeadStageId" in leads.columns) else 0
-    conversion_rate = (won_leads / total_leads * 100) if total_leads > 0 else 0.0
+    EXEC_PRIMARY = "#DAA520"
+    EXEC_BLUE = "#1E90FF"
+    EXEC_GREEN = "#32CD32"
+    EXEC_DANGER = "#DC143C"
+
+    leads = d.get("leads")
+    agents = d.get("agents") if d.get("agents") is not None else pd.DataFrame()
+    calls = d.get("calls")
+    countries = d.get("countries")
+    lead_stages = d.get("lead_stages")
+
+    if leads is None or len(leads) == 0:
+        st.info("No data available in the selected range.")
+        return
+
+    # Headline KPIs
+    total_leads = len(leads)
+    active_pipeline = leads["EstimatedBudget"].sum() if "EstimatedBudget" in leads.columns else 0.0
+    won_mask = leads["LeadStageId"].eq(6) if "LeadStageId" in leads.columns else pd.Series(False, index=leads.index)
+    won_revenue = leads.loc[won_mask, "EstimatedBudget"].sum() if "EstimatedBudget" in leads.columns else 0.0
+    won_leads = int(won_mask.sum())
+    conversion_rate = (won_leads / total_leads * 100) if total_leads else 0.0
 
     total_calls = len(calls) if calls is not None else 0
-    connected_calls = (calls["CallStatusId"] == 1).sum() if (calls is not None and "CallStatusId" in calls.columns) else 0
-    call_success_rate = (connected_calls / total_calls * 100) if total_calls > 0 else 0.0
+    connected_calls = int((calls["CallStatusId"] == 1).sum()) if (calls is not None and "CallStatusId" in calls.columns) else 0
+    call_success_rate = (connected_calls / total_calls * 100) if total_calls else 0.0
 
-    active_agents = len(agents[agents["IsActive"] == 1]) if (agents is not None and "IsActive" in agents.columns) else 0
-    assigned_leads = leads["AssignedAgentId"].notna().sum() if (leads is not None and "AssignedAgentId" in leads.columns) else 0
-    agent_utilization = (assigned_leads / active_agents) if active_agents > 0 else 0.0
+    active_agents = int(agents[agents["IsActive"] == 1].shape[0]) if ("IsActive" in agents.columns) else 0
+    assigned_leads = int(leads["AssignedAgentId"].notna().sum()) if "AssignedAgentId" in leads.columns else 0
+    agent_utilization = (assigned_leads / active_agents) if active_agents else 0.0
 
+    # KPI rows
     col1, col2, col3, col4 = st.columns(4)
     with col1: st.metric("Total Leads", format_number(total_leads))
     with col2: st.metric("Active Pipeline", format_currency(active_pipeline))
@@ -380,6 +399,130 @@ def show_executive_summary(d):
     with col3: st.metric("Active Agents", format_number(active_agents))
     with col4: st.metric("Agent Utilization", f"{agent_utilization:.1f} leads/agent")
 
+    # Sparkline helper
+    def sparkline(x, y, color):
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=x, y=y, mode="lines", line=dict(color=color, width=2)))
+        fig.update_layout(
+            height=90, margin=dict(l=0, r=0, t=0, b=0),
+            showlegend=False, plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)"
+        )
+        fig.update_xaxes(visible=False, fixedrange=True)
+        fig.update_yaxes(visible=False, fixedrange=True)
+        return fig
+
+    # Ensure 'period' exists; fallback to monthly if not provided by global filters
+    if "period" not in leads.columns:
+        dt = pd.to_datetime(leads.get("CreatedOn", pd.Timestamp.utcnow()), errors="coerce")
+        leads = leads.copy()
+        leads["period"] = dt.dt.to_period("M").apply(lambda p: p.start_time.date())
+
+    # Trends
+    leads_ts = leads.groupby("period").size().reset_index(name="count")
+    pipeline_ts = leads.groupby("period")["EstimatedBudget"].sum().reset_index(name="value") if "EstimatedBudget" in leads.columns else pd.DataFrame({"period":[], "value":[]})
+    rev_ts = leads.loc[won_mask].groupby("period")["EstimatedBudget"].sum().reset_index(name="value") if "EstimatedBudget" in leads.columns else pd.DataFrame({"period":[], "value":[]})
+
+    if calls is not None and len(calls) > 0:
+        calls = calls.copy()
+        calls["CallDateTime"] = pd.to_datetime(calls["CallDateTime"], errors="coerce")
+        calls["period"] = calls["CallDateTime"].dt.to_period("W").apply(lambda p: p.start_time.date())
+        calls_ts = calls.groupby("period").agg(
+            total=("LeadCallId","count"),
+            connected=("CallStatusId", lambda x: (x==1).sum())
+        ).reset_index()
+        calls_ts["rate"] = (calls_ts["connected"] / calls_ts["total"] * 100).round(1)
+    else:
+        calls_ts = pd.DataFrame({"period":[], "rate":[]})
+
+    st.markdown("---")
+    st.subheader("Trend at a glance")
+    s1, s2, s3, s4 = st.columns(4)
+    with s1:
+        st.caption("Leads trend")
+        st.plotly_chart(sparkline(leads_ts["period"], leads_ts["count"], EXEC_BLUE), use_container_width=True)
+    with s2:
+        st.caption("Active pipeline trend")
+        st.plotly_chart(sparkline(pipeline_ts["period"], pipeline_ts["value"], EXEC_PRIMARY), use_container_width=True)
+    with s3:
+        st.caption("Revenue trend (won)")
+        st.plotly_chart(sparkline(rev_ts["period"], rev_ts["value"], EXEC_GREEN), use_container_width=True)
+    with s4:
+        st.caption("Call success trend")
+        st.plotly_chart(sparkline(calls_ts["period"], calls_ts["rate"], "#7dd3fc"), use_container_width=True)
+
+    # Funnel snapshot
+    st.markdown("---")
+    st.subheader("Lead conversion snapshot")
+    if lead_stages is not None and "LeadStageId" in leads.columns:
+        order = lead_stages.sort_values("SortOrder")[["LeadStageId","StageName_E"]] if "SortOrder" in lead_stages.columns else lead_stages[["LeadStageId","StageName_E"]]
+        stage_counts = leads["LeadStageId"].value_counts().rename_axis("LeadStageId").reset_index(name="count")
+        funnel_df = order.merge(stage_counts, on="LeadStageId", how="left").fillna({"count":0})
+        fig_funnel = px.funnel(funnel_df, x="count", y="StageName_E",
+                               color_discrete_sequence=[EXEC_BLUE, EXEC_GREEN, EXEC_PRIMARY, "#FFA500", EXEC_DANGER, "#8A2BE2"])
+        fig_funnel.update_layout(
+            height=280, plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
+            font_color="white", margin=dict(l=0, r=0, t=10, b=10)
+        )
+        st.plotly_chart(fig_funnel, use_container_width=True)
+    else:
+        st.info("Lead stages not available for the funnel.")
+
+    # Pipeline vs Target gauge (Indicator)
+    st.markdown("---")
+    g1, g2 = st.columns([1,1])
+    with g1:
+        st.subheader("Pipeline vs Target")
+        target_pipeline = max(active_pipeline * 1.1, 1e9)  # demo target (110% of current or $1B minimum)
+        fig_g = go.Figure(go.Indicator(
+            mode="gauge+number+delta",
+            value=active_pipeline,
+            delta={'reference': target_pipeline, 'relative': True},
+            number={'valueformat': "$,.0f"},
+            gauge={
+                'axis': {'range': [None, target_pipeline]},
+                'bar': {'color': EXEC_PRIMARY},
+                'steps': [
+                    {'range': [0, target_pipeline*0.6], 'color': "#2f3b45"},
+                    {'range': [target_pipeline*0.6, target_pipeline*0.9], 'color': "#394754"},
+                    {'range': [target_pipeline*0.9, target_pipeline*1.0], 'color': "#415263"},
+                ],
+                'threshold': {'line': {'color': '#FFFFFF', 'width': 2}, 'thickness': 0.75, 'value': target_pipeline}
+            }
+        ))
+        fig_g.update_layout(height=260, margin=dict(l=10, r=10, t=10, b=10),
+                            paper_bgcolor="rgba(0,0,0,0)", font_color="white")
+        st.plotly_chart(fig_g, use_container_width=True)
+
+    # Top markets score table with ProgressColumn
+    with g2:
+        st.subheader("Top markets (pipeline share)")
+        if countries is not None and "CountryId" in leads.columns:
+            geo = leads.groupby("CountryId").agg(
+                Leads=("LeadId","count"),
+                Pipeline=("EstimatedBudget","sum")
+            ).reset_index()
+            geo = geo.merge(countries[["CountryId","CountryName_E"]], on="CountryId", how="left")
+            total_pipe = geo["Pipeline"].sum()
+            if total_pipe > 0:
+                geo["Share"] = (geo["Pipeline"] / total_pipe * 100).round(1)
+            else:
+                geo["Share"] = 0.0
+            top5 = geo.sort_values("Pipeline", ascending=False).head(5).reset_index(drop=True)
+            top5_display = top5[["CountryName_E","Leads","Pipeline","Share"]].copy()
+            top5_display.rename(columns={"CountryName_E":"Country"}, inplace=True)
+            st.dataframe(
+                top5_display,
+                use_container_width=True,
+                column_config={
+                    "Pipeline": st.column_config.NumberColumn("Pipeline", format="$%,.0f"),
+                    "Share": st.column_config.ProgressColumn("Share of Pipeline", format="%.1f%%", min_value=0.0, max_value=100.0)
+                },
+                hide_index=True
+            )
+        else:
+            st.info("Country data unavailable to build the markets table.")
+
+    # AI Insights (existing content)
     st.markdown("---")
     st.subheader("🤖 AI-Powered Strategic Insights")
     c1, c2 = st.columns(2)
@@ -407,6 +550,7 @@ def show_executive_summary(d):
         </ul>
         </div>
         """, unsafe_allow_html=True)
+
 
 def show_lead_status(d):
     leads = d["leads"]
