@@ -344,11 +344,6 @@ else:
 # Dashboard sections
 # -----------------------------------------------------------------------------
 def show_executive_summary(d):
-    import plotly.express as px
-    import plotly.graph_objects as go
-    import pandas as pd
-    import numpy as np
-
     # Executive palette
     EXEC_PRIMARY = "#DAA520"
     EXEC_BLUE = "#1E90FF"
@@ -383,7 +378,77 @@ def show_executive_summary(d):
     assigned_leads = int(leads["AssignedAgentId"].notna().sum()) if "AssignedAgentId" in leads.columns else 0
     agent_utilization = (assigned_leads / active_agents) if active_agents else 0.0
 
-    # KPI rows
+    # -------------------------
+    # Determine selected period bounds from filtered leads
+    # -------------------------
+    period_min = None
+    period_max = None
+    if "period" in leads.columns:
+        period_min = pd.to_datetime(leads["period"], errors="coerce").min()
+        period_max = pd.to_datetime(leads["period"], errors="coerce").max()
+    elif "CreatedOn" in leads.columns:
+        dt = pd.to_datetime(leads["CreatedOn"], errors="coerce")
+        period_min, period_max = dt.min(), dt.max()
+
+    # -------------------------
+    # Resolve Marketing Spend (CSV -> config -> manual)
+    # -------------------------
+    marketing_spend = None
+
+    # 1) Dataset provided in memory
+    spend_df = d.get("marketing_spend")
+
+    # 2) If not provided, try to read optional CSV
+    if spend_df is None:
+        try:
+            spend_df = pd.read_csv("marketing_spend.csv")
+        except Exception:
+            spend_df = None
+
+    # 3) If we have a spend dataframe, filter to selected date range and sum
+    if spend_df is not None and "SpendUSD" in spend_df.columns:
+        # Accept either 'Date' or 'SpendDate' column names
+        date_col = "Date" if "Date" in spend_df.columns else ("SpendDate" if "SpendDate" in spend_df.columns else None)
+        if date_col is not None:
+            spend_df = spend_df.copy()
+            spend_df[date_col] = pd.to_datetime(spend_df[date_col], errors="coerce")
+            if period_min is not None and period_max is not None:
+                mask = spend_df[date_col].between(period_min, period_max)
+                marketing_spend = float(spend_df.loc[mask, "SpendUSD"].sum())
+            else:
+                marketing_spend = float(spend_df["SpendUSD"].sum())
+        else:
+            # If no date column, assume spend already matches filtered period
+            marketing_spend = float(spend_df["SpendUSD"].sum())
+
+    # 4) Fallback to config (dashboard_data.json) if present
+    if marketing_spend is None:
+        cfg = d.get("config", {})
+        try:
+            marketing_spend = float(cfg.get("executive_summary", {}).get("marketing_spend_usd", 0.0))
+        except Exception:
+            marketing_spend = None
+
+    # 5) Final manual fallback via sidebar input (stored for session continuity)
+    if marketing_spend is None or marketing_spend <= 0:
+        with st.sidebar:
+            st.markdown("---")
+            st.caption("Set marketing spend for ROI (selected period)")
+            default_spend = float(st.session_state.get("marketing_spend_usd", 0.0))
+            manual_spend = st.number_input(
+                "Marketing spend (USD)", min_value=0.0, step=10000.0, value=default_spend, key="__roi_spend_input"
+            )
+            if manual_spend > 0:
+                marketing_spend = float(manual_spend)
+                st.session_state["marketing_spend_usd"] = float(manual_spend)
+
+    # ROI = (Revenue − Marketing Spend) / Marketing Spend × 100
+    roi_pct = None
+    if marketing_spend is not None and marketing_spend > 0:
+        roi_pct = ((won_revenue - marketing_spend) / marketing_spend) * 100.0  # Standard ROI formula [1] & marketing ROI [2]
+    # -------------------------
+    # KPI rows (with computed ROI)
+    # -------------------------
     col1, col2, col3, col4 = st.columns(4)
     with col1: st.metric("Total Leads", format_number(total_leads))
     with col2: st.metric("Active Pipeline", format_currency(active_pipeline))
@@ -392,12 +457,16 @@ def show_executive_summary(d):
 
     col1, col2, col3, col4 = st.columns(4)
     with col1: st.metric("Call Success Rate", f"{call_success_rate:.1f}%")
-    with col2: st.metric("ROI", "8,205.2%")
+    with col2:
+        if roi_pct is not None:
+            st.metric("ROI", f"{roi_pct:,.1f}%")
+        else:
+            st.metric("ROI", "—")
+            st.caption("Provide marketing spend to compute ROI.")
     with col3: st.metric("Active Agents", format_number(active_agents))
     with col4: st.metric("Agent Utilization", f"{agent_utilization:.1f} leads/agent")
 
     # -------------------------
-    # Trend at a glance (indexed area mini-charts)
     # -------------------------
     st.markdown("---")
     st.subheader("Trend at a glance")
