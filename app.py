@@ -468,115 +468,152 @@ def show_executive_summary(d):
 
     # -------------------------
     # -------------------------
-    st.markdown("---")
+st.markdown("---")
     st.subheader("Trend at a glance")
 
-    def make_indexed_area(ts_df, x_col, y_col, color, title):
-        ts = ts_df[[x_col, y_col]].dropna().sort_values(x_col).copy()
-        fig = go.Figure()
-        if ts.empty or len(ts) < 2:
-            fig.update_layout(
-                height=120, margin=dict(l=0, r=0, t=0, b=0),
-                plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
-                showlegend=False, font_color="white"
-            )
-            fig.add_annotation(
-                text="Insufficient data", showarrow=False, x=0.5, y=0.5, xref="paper", yref="paper",
-                font=dict(color="#cccccc", size=12)
-            )
-            fig.update_xaxes(visible=False, fixedrange=True)
-            fig.update_yaxes(visible=False, fixedrange=True)
-            return fig
+    trend_style = st.radio(
+        "Trend style",
+        ["Line", "Bars", "Bullet"],
+        index=0,
+        horizontal=True,
+        help="Choose how compact trend tiles are rendered",
+        key="__trend_style_exec"
+    )
 
-        base = ts[y_col].iloc[0] if ts[y_col].iloc[0] != 0 else 1.0
-        ts["idx"] = (ts[y_col] / base) * 100.0
-        ts["idx_smooth"] = ts["idx"].rolling(3, min_periods=1).mean()
-
-        ymin = float(ts["idx_smooth"].min())
-        ymax = float(ts["idx_smooth"].max())
-        pad = max(1.0, (ymax - ymin) * 0.12)
-        yrange = [ymin - pad, ymax + pad]
-
-        last_x = ts[x_col].iloc[-1]
-        last_y = ts["idx_smooth"].iloc[-1]
-        delta_pct = ((ts[y_col].iloc[-1] - ts[y_col].iloc[0]) / max(1e-9, ts[y_col].iloc[0])) * 100.0
-
-        fig.add_trace(go.Scatter(
-            x=ts[x_col], y=ts["idx_smooth"], mode="lines",
-            line=dict(color=color, width=3, shape="spline"),
-            fill="tozeroy",
-            fillcolor="rgba(218,165,32,0.08)" if color == EXEC_PRIMARY else "rgba(30,144,255,0.08)"
-        ))
-        fig.add_trace(go.Scatter(
-            x=[last_x], y=[last_y], mode="markers+text",
-            marker=dict(size=8, color=color),
-            text=[f"{last_y:.0f} (Δ{delta_pct:+.1f}%)"],
-            textposition="top right",
-            textfont=dict(color="#e8e8e8", size=11),
-            showlegend=False
-        ))
-        fig.update_layout(
-            height=160,
-            title=dict(text=title, x=0.01, xanchor="left", font=dict(size=12, color="#cccccc")),
-            margin=dict(l=0, r=0, t=20, b=0),
-            plot_bgcolor="rgba(0,0,0,0)",
-            paper_bgcolor="rgba(0,0,0,0)",
-            showlegend=False,
-            font_color="white"
-        )
-        fig.update_xaxes(visible=False, fixedrange=True)
-        fig.update_yaxes(visible=False, fixedrange=True, range=yrange)
-        return fig
+    import plotly.graph_objects as go
+    import plotly.express as px
 
     # Ensure 'period' exists; fallback to monthly if not present
     if "period" not in leads.columns:
-        dt = pd.to_datetime(leads.get("CreatedOn", pd.Timestamp.utcnow()), errors="coerce")
+        dt_tmp = pd.to_datetime(leads.get("CreatedOn", pd.Timestamp.utcnow()), errors="coerce")
         leads = leads.copy()
-        leads["period"] = dt.dt.to_period("M").apply(lambda p: p.start_time.date())
+        leads["period"] = dt_tmp.dt.to_period("M").apply(lambda p: p.start_time.date())
 
-    # Build time series for each metric
-    leads_ts = leads.groupby("period").size().reset_index(name="value")
-    pipeline_ts = (
-        leads.groupby("period")["EstimatedBudget"].sum().reset_index(name="value")
-        if "EstimatedBudget" in leads.columns else pd.DataFrame({"period":[], "value":[]})
-    )
-    rev_ts = (
-        leads.loc[won_mask].groupby("period")["EstimatedBudget"].sum().reset_index(name="value")
-        if "EstimatedBudget" in leads.columns else pd.DataFrame({"period":[], "value":[]})
-    )
+    # Build per-period series
+    leads_ts   = leads.groupby("period").size().reset_index(name="value")
+    pipeline_ts = (leads.groupby("period")["EstimatedBudget"].sum()
+                   .reset_index(name="value")) if "EstimatedBudget" in leads.columns else pd.DataFrame({"period":[], "value":[]})
+    rev_ts     = (leads.loc[won_mask].groupby("period")["EstimatedBudget"].sum()
+                   .reset_index(name="value")) if "EstimatedBudget" in leads.columns else pd.DataFrame({"period":[], "value":[]})
+
     if calls is not None and len(calls) > 0:
-        calls = calls.copy()
-        calls["CallDateTime"] = pd.to_datetime(calls["CallDateTime"], errors="coerce")
-        calls["period"] = calls["CallDateTime"].dt.to_period("W").apply(lambda p: p.start_time.date())
-        calls_ts = calls.groupby("period").agg(
-            total=("LeadCallId","count"),
-            connected=("CallStatusId", lambda x: (x==1).sum())
-        ).reset_index()
-        calls_ts["value"] = (calls_ts["connected"] / calls_ts["total"] * 100).round(1)
+        calls_cp = calls.copy()
+        calls_cp["CallDateTime"] = pd.to_datetime(calls_cp["CallDateTime"], errors="coerce")
+        calls_cp["period"] = calls_cp["CallDateTime"].dt.to_period("W").apply(lambda p: p.start_time.date())
+        calls_ts = calls_cp.groupby("period").agg(total=("LeadCallId","count"),
+                                                  connected=("CallStatusId", lambda x: (x==1).sum())).reset_index()
+        calls_ts["value"] = (calls_ts["connected"]/calls_ts["total"]*100).round(1)
     else:
         calls_ts = pd.DataFrame({"period":[], "value":[]})
 
-    s1, s2, s3, s4 = st.columns(4)
-    with s1:
-        st.plotly_chart(
-            make_indexed_area(leads_ts, "period", "value", EXEC_BLUE, "Leads trend (indexed)"),
-            use_container_width=True
+    def _index_series(df, val_col="value"):
+        df = df.copy()
+        if df.empty:
+            df["idx"] = []
+            return df
+        base = df[val_col].iloc[0] if df[val_col].iloc[0] != 0 else 1.0
+        df["idx"] = (df[val_col] / base) * 100.0
+        return df
+
+    leads_ts   = _index_series(leads_ts)
+    pipeline_ts= _index_series(pipeline_ts)
+    rev_ts     = _index_series(rev_ts)
+    calls_ts   = _index_series(calls_ts)
+
+    def _apply_axes(fig, y_vals, title_txt):
+        # Minimal axes with ticks and grid to avoid “flat” look
+        ymin = float(pd.Series(y_vals).min()) if len(y_vals) else 0
+        ymax = float(pd.Series(y_vals).max()) if len(y_vals) else 1
+        pad  = max(1.0, (ymax - ymin) * 0.12)
+        yrng = [ymin - pad, ymax + pad]
+        fig.update_layout(
+            height=180,
+            title=dict(text=title_txt, x=0.01, xanchor="left", font=dict(size=12, color="#cfcfcf")),
+            margin=dict(l=6, r=6, t=24, b=8),
+            plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)",
+            font_color="white",
+            showlegend=False,
         )
-    with s2:
-        st.plotly_chart(
-            make_indexed_area(pipeline_ts, "period", "value", EXEC_PRIMARY, "Active pipeline trend (indexed)"),
-            use_container_width=True
+        fig.update_xaxes(
+            showgrid=True, gridcolor="rgba(255,255,255,0.08)",
+            tickfont=dict(color="#a8a8a8", size=10), nticks=4, tickangle=0, ticks="outside"
         )
-    with s3:
-        st.plotly_chart(
-            make_indexed_area(rev_ts, "period", "value", EXEC_GREEN, "Revenue trend (won, indexed)"),
-            use_container_width=True
+        fig.update_yaxes(
+            showgrid=True, gridcolor="rgba(255,255,255,0.08)",
+            tickfont=dict(color="#a8a8a8", size=10), nticks=3, ticks="outside", range=yrng
         )
-    with s4:
-        st.plotly_chart(
-            make_indexed_area(calls_ts, "period", "value", "#7dd3fc", "Call success trend (indexed)"),
-            use_container_width=True
+        return fig
+
+    def tile_line(df, color, title):
+        df = df.dropna().sort_values("period")
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(
+            x=df["period"], y=df["idx"], mode="lines+markers",
+            line=dict(color=color, width=3, shape="spline"),
+            marker=dict(size=5, color=color)
+        ))
+        return _apply_axes(fig, df["idx"], title)
+
+    def tile_bar(df, color, title):
+        # Sparkbars with axis ticks
+        df = df.dropna().sort_values("period")
+        fig = go.Figure()
+        fig.add_trace(go.Bar(
+            x=df["period"], y=df["idx"],
+            marker=dict(color=color, line=dict(color="rgba(255,255,255,0.15)", width=0.5)),
+            opacity=0.9
+        ))
+        return _apply_axes(fig, df["idx"], title)
+
+    def tile_bullet(df, title, bar_color):
+        # Bullet KPI: current vs base (idx vs 100), with steps and threshold
+        if df.empty:
+            fig = go.Figure()
+            return _apply_axes(fig, [0, 1], title)
+        cur = float(df["idx"].iloc[-1])
+        fig = go.Figure(go.Indicator(
+            mode="number+gauge+delta",
+            value=cur,
+            number={'suffix': "", 'valueformat': ".0f"},
+            delta={'reference': 100, 'relative': False},
+            gauge={
+                'shape': "bullet",
+                'axis': {'range': [80, 120]},  # centered around 100 index
+                'steps': [
+                    {'range': [80, 95],  'color': "rgba(220,20,60,0.35)"},
+                    {'range': [95, 105], 'color': "rgba(255,215,0,0.35)"},
+                    {'range': [105, 120],'color': "rgba(50,205,50,0.35)"},
+                ],
+                'bar': {'color': bar_color},
+                'threshold': {'line': {'color': '#FFFFFF', 'width': 2}, 'thickness': 0.7, 'value': 100}
+            },
+            domain={'x':[0,1],'y':[0,1]},
+            title={'text': title}
+        ))
+        fig.update_layout(
+            height=120, margin=dict(l=8, r=8, t=26, b=8),
+            paper_bgcolor="rgba(0,0,0,0)", font_color="white"
         )
+        return fig
+
+    # Render 4 tiles in the chosen style
+    c1, c2, c3, c4 = st.columns(4)
+    if trend_style == "Line":
+        with c1: st.plotly_chart(tile_line(leads_ts,   EXEC_BLUE,   "Leads trend (indexed)"), use_container_width=True)
+        with c2: st.plotly_chart(tile_line(pipeline_ts,EXEC_PRIMARY,"Active pipeline trend (indexed)"), use_container_width=True)
+        with c3: st.plotly_chart(tile_line(rev_ts,     EXEC_GREEN,  "Revenue trend (won, indexed)"), use_container_width=True)
+        with c4: st.plotly_chart(tile_line(calls_ts,   "#7dd3fc",    "Call success trend (indexed)"), use_container_width=True)
+    elif trend_style == "Bars":
+        with c1: st.plotly_chart(tile_bar(leads_ts,    EXEC_BLUE,   "Leads trend (indexed)"), use_container_width=True)
+        with c2: st.plotly_chart(tile_bar(pipeline_ts, EXEC_PRIMARY,"Active pipeline trend (indexed)"), use_container_width=True)
+        with c3: st.plotly_chart(tile_bar(rev_ts,      EXEC_GREEN,  "Revenue trend (won, indexed)"), use_container_width=True)
+        with c4: st.plotly_chart(tile_bar(calls_ts,    "#7dd3fc",    "Call success trend (indexed)"), use_container_width=True)
+    else:  # Bullet
+        with c1: st.plotly_chart(tile_bullet(leads_ts,   "Leads index", EXEC_BLUE),    use_container_width=True)
+        with c2: st.plotly_chart(tile_bullet(pipeline_ts,"Pipeline index", EXEC_PRIMARY),use_container_width=True)
+        with c3: st.plotly_chart(tile_bullet(rev_ts,     "Revenue index", EXEC_GREEN), use_container_width=True)
+        with c4: st.plotly_chart(tile_bullet(calls_ts,   "Call success index", "#7dd3fc"), use_container_width=True)
 
     # -------------------------
     # Lead conversion snapshot (funnel)
