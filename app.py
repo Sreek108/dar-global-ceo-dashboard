@@ -469,7 +469,7 @@ def show_executive_summary(d):
     # -------------------------
     # -------------------------
 st.markdown("---")
-    st.subheader("Trend at a glance")
+st.subheader("Trend at a glance")
 
     trend_style = st.radio(
         "Trend style",
