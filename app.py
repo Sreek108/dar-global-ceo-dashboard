@@ -1,9 +1,3 @@
-# app.py
-# DAR Global - CEO Executive CRM Dashboard (Updated)
-# - Horizontal top navigation (with streamlit-option-menu fallback)
-# - Date controls: Grain (Week/Month/Year) + range slider + presets
-# - Filters applied across all dashboards
-
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
@@ -350,11 +344,6 @@ else:
 # Dashboard sections
 # -----------------------------------------------------------------------------
 def show_executive_summary(d):
-    import plotly.express as px
-    import plotly.graph_objects as go
-    import pandas as pd
-    import numpy as np
-
     EXEC_PRIMARY = "#DAA520"
     EXEC_BLUE = "#1E90FF"
     EXEC_GREEN = "#32CD32"
