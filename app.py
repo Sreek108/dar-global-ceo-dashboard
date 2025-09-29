@@ -33,17 +33,6 @@ EXEC_SURFACE = "#2d2d2d"
 st.markdown(f"""
 <style>
 /* Executive Theme */
-.main-header {{
-    background: linear-gradient(135deg, {EXEC_BG} 0%, {EXEC_SURFACE} 100%);
-    color: {EXEC_PRIMARY};
-    padding: 24px;
-    border-radius: 12px;
-    border: 2px solid {EXEC_PRIMARY};
-    text-align: center;
-    box-shadow: 0 8px 16px rgba(0,0,0,.35);
-}}
-.main-header h1 {{ color: {EXEC_PRIMARY}; margin: 0 0 6px 0; }}
-.main-header h3 {{ color: {EXEC_BLUE}; margin: 4px 0 0 0; }}
 div[data-testid="metric-container"] {{
     background: linear-gradient(135deg, {EXEC_SURFACE} 0%, {EXEC_BG} 100%);
     border: 2px solid {EXEC_PRIMARY};
