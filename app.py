@@ -16,46 +16,61 @@ except Exception:
 # -----------------------------------------------------------------------------
 # Page configuration and executive styling
 # -----------------------------------------------------------------------------
-st.set_page_config(
-    page_title="DAR Global - Dashboard",
-    page_icon="",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
-
-EXEC_PRIMARY = "#DAA520"   # Gold
-EXEC_BLUE = "#1E90FF"      # Blue
-EXEC_GREEN = "#32CD32"     # Green
-EXEC_DANGER = "#DC143C"    # Red
-EXEC_BG = "#1a1a1a"
-EXEC_SURFACE = "#2d2d2d"
-
 st.markdown(f"""
 <style>
-/* Executive Theme */
-div[data-testid="metric-container"] {{
-    background: linear-gradient(135deg, {EXEC_SURFACE} 0%, {EXEC_BG} 100%);
-    border: 2px solid {EXEC_PRIMARY};
-    padding: 0.75rem;
-    border-radius: 10px;
-    color: white;
+:root {{
+  --exec-bg: {EXEC_BG};
+  --exec-surface: {EXEC_SURFACE};
+  --exec-primary: {EXEC_PRIMARY};
+  --exec-blue: {EXEC_BLUE};
+  --exec-green: {EXEC_GREEN};
 }}
-div[data-testid="stHorizontalBlock"] .stButton>button {{
-    background: linear-gradient(135deg, {EXEC_PRIMARY} 0%, #b8860b 100%);
-    color: white; border: none; border-radius: 8px; padding: 8px 14px;
+
+/* Full-bleed layout with minimal gutters */
+section.main > div.block-container {{
+  padding-left: 0.25rem !important;
+  padding-right: 0.25rem !important;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  max-width: 100% !important;
 }}
-.insight-box {{
-    background: linear-gradient(135deg, {EXEC_SURFACE} 0%, {EXEC_BG} 100%);
-    padding: 18px; border-radius: 10px; border-left: 5px solid {EXEC_GREEN};
-    color: white; box-shadow: 0 4px 10px rgba(0,0,0,.25);
+
+/* Remove Streamlit top headroom */
+header[data-testid="stHeader"] {{
+  height: 0 !important; padding: 0 !important; margin: 0 !important; background: transparent !important;
 }}
-.section {{
-    background: linear-gradient(135deg, {EXEC_SURFACE} 0%, {EXEC_BG} 100%);
-    padding: 18px; border-radius: 10px; border: 1px solid #444;
+
+/* Bigger horizontal navigation, tighter strip */
+div[role="tablist"] {{
+  margin-top: 4px !important; margin-bottom: 6px !important; gap: 6px !important;
+  padding-top: 2px !important; padding-bottom: 2px !important;
 }}
+div[role="tablist"] > div,
+div[role="tablist"] > button {{
+  font-size: 16px !important; line-height: 36px !important; padding: 6px 12px !important;
+}}
+div[role="tablist"] button[aria-selected="true"],
+div[role="tab"][aria-selected="true"] {{
+  border-bottom: 3px solid var(--exec-primary) !important;
+}}
+
+/* Compact headings and dividers */
+h1, .stMarkdown h1 {{ margin: 0 0 6px 0 !important; }}
+h2, .stMarkdown h2 {{ margin: 4px 0 6px 0 !important; }}
+hr {{ margin: 6px 0 !important; }}
+
+/* Optional: tighten custom sections/banners if present */
+.main-header {{ margin: 0 !important; padding: 10px 12px !important; border-width: 1px !important; }}
+.section {{ padding: 8px !important; }}
+
+/* Plotly and DataFrame spacing */
+.element-container:has(.plotly) {{ margin-top: 4px !important; }}
+[data-testid="stDataFrame"] {{ margin-top: 4px !important; }}
+
+/* Hide default footer to remove bottom whitespace */
+footer {{ visibility: hidden !important; height: 0 !important; }}
 </style>
 """, unsafe_allow_html=True)
-
 # -----------------------------------------------------------------------------
 # Utilities
 # -----------------------------------------------------------------------------
