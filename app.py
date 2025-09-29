@@ -16,7 +16,6 @@ except Exception:
 # -----------------------------------------------------------------------------
 # Page configuration and executive styling
 # -----------------------------------------------------------------------------
-# Page config FIRST
 st.set_page_config(
     page_title="DAR Global - Dashboard",
     page_icon="",
@@ -32,7 +31,7 @@ EXEC_DANGER  = "#DC143C"   # Red
 EXEC_BG      = "#1a1a1a"
 EXEC_SURFACE = "#2d2d2d"
 
-# Compact layout + your executive theme
+# Compact layout + executive theme
 st.markdown(f"""
 <style>
 :root {{
@@ -43,7 +42,7 @@ st.markdown(f"""
   --exec-green: {EXEC_GREEN};
 }}
 
-/* Full-bleed layout, minimal gutters (reduce side and top/bottom space) */
+/* Full-bleed layout, minimal gutters */
 section.main > div.block-container {{
   padding-left: 0.25rem !important;
   padding-right: 0.25rem !important;
@@ -71,7 +70,7 @@ div[role="tab"][aria-selected="true"] {{
   border-bottom: 3px solid var(--exec-primary) !important;
 }}
 
-/* Your Executive Theme cards/buttons/sections */
+/* Executive Theme cards/buttons/sections */
 div[data-testid="metric-container"] {{
   background: linear-gradient(135deg, var(--exec-surface) 0%, var(--exec-bg) 100%);
   border: 2px solid var(--exec-primary);
@@ -105,26 +104,23 @@ hr {{ margin: 6px 0 !important; }}
 footer {{ visibility: hidden !important; height: 0 !important; }}
 
 /* Fill available width even inside iframes/portals */
-html, body, .block-container, .main, section.main {
+html, body, .block-container, .main, section.main {{
   width: 100% !important;
-}
+}}
 
 /* Collapse outer spacing around the first title row */
-[data-testid="stAppViewContainer"] > .main > div:first-child {
+[data-testid="stAppViewContainer"] > .main > div:first-child {{
   margin-top: 2px !important;
-}
+}}
 
-/* Tighten the black KPI panel internal padding */
-.css-1dp5vir, .css-18ni7ap, .stCard {
+/* Tighten the KPI panel inner padding (class fallback + stCard) */
+.css-1dp5vir, .css-18ni7ap, .stCard {{
   padding-left: 10px !important;
   padding-right: 10px !important;
-}
+}}
 
 /* If the header banner exists, keep it compact */
-.main-header { margin: 0 !important; padding: 10px 12px !important; }
-
-/* Remove page footer to avoid bottom gap */
-footer { visibility: hidden !important; height: 0 !important; }
+.main-header {{ margin: 0 !important; padding: 10px 12px !important; }}
 </style>
 """, unsafe_allow_html=True)
 # -----------------------------------------------------------------------------
