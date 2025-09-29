@@ -17,17 +17,22 @@ except Exception:
 # Page configuration and executive styling
 # -----------------------------------------------------------------------------
 # Page config FIRST
-st.set_page_config(page_title="DAR Global - Executive Dashboard", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(
+    page_title="DAR Global - Dashboard",
+    page_icon="",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 
-# Define theme variables BEFORE using them in the CSS f-string
-EXEC_PRIMARY = "#DAA520"
-EXEC_BLUE    = "#1E90FF"
-EXEC_GREEN   = "#32CD32"
-EXEC_DANGER  = "#DC143C"
+# Theme variables (define BEFORE CSS)
+EXEC_PRIMARY = "#DAA520"   # Gold
+EXEC_BLUE    = "#1E90FF"   # Blue
+EXEC_GREEN   = "#32CD32"   # Green
+EXEC_DANGER  = "#DC143C"   # Red
 EXEC_BG      = "#1a1a1a"
 EXEC_SURFACE = "#2d2d2d"
 
-# Now the CSS may safely reference {EXEC_BG}, etc.
+# Compact layout + your executive theme
 st.markdown(f"""
 <style>
 :root {{
@@ -38,7 +43,7 @@ st.markdown(f"""
   --exec-green: {EXEC_GREEN};
 }}
 
-/* Full-bleed layout with minimal gutters */
+/* Full-bleed layout, minimal gutters (reduce side and top/bottom space) */
 section.main > div.block-container {{
   padding-left: 0.25rem !important;
   padding-right: 0.25rem !important;
@@ -47,12 +52,12 @@ section.main > div.block-container {{
   max-width: 100% !important;
 }}
 
-/* Remove Streamlit top headroom */
+/* Remove Streamlit's default top headroom */
 header[data-testid="stHeader"] {{
   height: 0 !important; padding: 0 !important; margin: 0 !important; background: transparent !important;
 }}
 
-/* Bigger horizontal navigation, tighter strip */
+/* Bigger horizontal navigation with tighter strip */
 div[role="tablist"] {{
   margin-top: 4px !important; margin-bottom: 6px !important; gap: 6px !important;
   padding-top: 2px !important; padding-bottom: 2px !important;
@@ -66,16 +71,33 @@ div[role="tab"][aria-selected="true"] {{
   border-bottom: 3px solid var(--exec-primary) !important;
 }}
 
-/* Compact headings and dividers */
+/* Your Executive Theme cards/buttons/sections */
+div[data-testid="metric-container"] {{
+  background: linear-gradient(135deg, var(--exec-surface) 0%, var(--exec-bg) 100%);
+  border: 2px solid var(--exec-primary);
+  padding: 0.75rem;
+  border-radius: 10px;
+  color: white;
+}}
+div[data-testid="stHorizontalBlock"] .stButton>button {{
+  background: linear-gradient(135deg, var(--exec-primary) 0%, #b8860b 100%);
+  color: white; border: none; border-radius: 8px; padding: 8px 14px;
+}}
+.insight-box {{
+  background: linear-gradient(135deg, var(--exec-surface) 0%, var(--exec-bg) 100%);
+  padding: 18px; border-radius: 10px;
+  border-left: 5px solid var(--exec-green); color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,.25);
+}}
+.section {{
+  background: linear-gradient(135deg, var(--exec-surface) 0%, var(--exec-bg) 100%);
+  padding: 18px; border-radius: 10px; border: 1px solid #444;
+}}
+
+/* Compact headings/dividers and element margins */
 h1, .stMarkdown h1 {{ margin: 0 0 6px 0 !important; }}
 h2, .stMarkdown h2 {{ margin: 4px 0 6px 0 !important; }}
 hr {{ margin: 6px 0 !important; }}
-
-/* Optional: tighten custom sections/banners if present */
-.main-header {{ margin: 0 !important; padding: 10px 12px !important; border-width: 1px !important; }}
-.section {{ padding: 8px !important; }}
-
-/* Plotly and DataFrame spacing */
 .element-container:has(.plotly) {{ margin-top: 4px !important; }}
 [data-testid="stDataFrame"] {{ margin-top: 4px !important; }}
 
