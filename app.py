@@ -305,7 +305,7 @@ if HAS_OPTION_MENU:
             "container": {"padding": "0!important", "background-color": "#0f1116"},
             "icon": {"color": EXEC_PRIMARY, "font-size": "16px"},
             "nav-link": {
-                "font-size": "14px",
+                "font-size": "30px",
                 "text-align": "center",
                 "margin": "0px",
                 "color": "#d0d0d0",
