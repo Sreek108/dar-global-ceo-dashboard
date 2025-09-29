@@ -103,6 +103,28 @@ hr {{ margin: 6px 0 !important; }}
 
 /* Hide default footer to remove bottom whitespace */
 footer {{ visibility: hidden !important; height: 0 !important; }}
+
+/* Fill available width even inside iframes/portals */
+html, body, .block-container, .main, section.main {
+  width: 100% !important;
+}
+
+/* Collapse outer spacing around the first title row */
+[data-testid="stAppViewContainer"] > .main > div:first-child {
+  margin-top: 2px !important;
+}
+
+/* Tighten the black KPI panel internal padding */
+.css-1dp5vir, .css-18ni7ap, .stCard {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+/* If the header banner exists, keep it compact */
+.main-header { margin: 0 !important; padding: 10px 12px !important; }
+
+/* Remove page footer to avoid bottom gap */
+footer { visibility: hidden !important; height: 0 !important; }
 </style>
 """, unsafe_allow_html=True)
 # -----------------------------------------------------------------------------
