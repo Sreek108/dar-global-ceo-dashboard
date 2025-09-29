@@ -44,10 +44,10 @@ st.markdown(f"""
 
 /* Full-bleed layout, minimal gutters */
 section.main > div.block-container {{
-  padding-left: 0.25rem !important;
-  padding-right: 0.25rem !important;
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
+  padding-left: 0.1rem !important;
+  padding-right: 0.1rem !important;
+  padding-top: 0.1rem !important;
+  padding-bottom: 0.1rem !important;
   max-width: 100% !important;
 }}
 
