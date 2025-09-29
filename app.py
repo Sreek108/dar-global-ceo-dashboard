@@ -16,6 +16,18 @@ except Exception:
 # -----------------------------------------------------------------------------
 # Page configuration and executive styling
 # -----------------------------------------------------------------------------
+# Page config FIRST
+st.set_page_config(page_title="DAR Global - Executive Dashboard", layout="wide", initial_sidebar_state="expanded")
+
+# Define theme variables BEFORE using them in the CSS f-string
+EXEC_PRIMARY = "#DAA520"
+EXEC_BLUE    = "#1E90FF"
+EXEC_GREEN   = "#32CD32"
+EXEC_DANGER  = "#DC143C"
+EXEC_BG      = "#1a1a1a"
+EXEC_SURFACE = "#2d2d2d"
+
+# Now the CSS may safely reference {EXEC_BG}, etc.
 st.markdown(f"""
 <style>
 :root {{
