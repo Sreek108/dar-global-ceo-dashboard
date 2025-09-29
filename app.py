@@ -142,15 +142,6 @@ data = load_data()
 # -----------------------------------------------------------------------------
 # Header
 # -----------------------------------------------------------------------------
-st.markdown(f"""
-<div class="main-header">
-  <h1>DAR Global — Executive Dashboard</h1>
-  <h3>AI-Powered Analytics • </h3>
-  <p style="margin: 6px 0 0 0; color: {EXEC_GREEN};">
-  </p>
-</div>
-""", unsafe_allow_html=True)
-st.write("")
 
 # -----------------------------------------------------------------------------
 # Global date controls (sidebar): Grain + Quick Preset + Range Slider
